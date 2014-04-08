@@ -18,7 +18,7 @@ HTMLBook自体は以下のように特徴づけられています:
 
 ここにあるHTMLBook仕様のワーキングドラフトを読んでください:
 
-https://github.com/oreillymedia/HTMLBook/blob/master/specification.asciidoc
+http://oreillymedia.github.io/HTMLBook/
 
 （訳注: 日本語訳は https://github.com/JAGAT-XML-publishing-study-group/HTMLBook-JA/blob/master/specification.asciidoc ）
 
