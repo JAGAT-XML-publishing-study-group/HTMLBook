@@ -55,41 +55,40 @@ span[data-type=footnote] {
   </head>
   <body>
     <section id="abstract">
-      <p>Let&rsquo;s write books in HTML! HTMLBook is an open, XHTML5-based standard for the authoring and production of both print and digital books. HTMLBook is built on the following premises:</p>
+      <p>本をHTMLで執筆しましょう！　HTMLBookはオープンで、XHTML5ベースでプリントとデジタル双方の本を執筆・制作するための標準です。 HTMLBookは以下のような前提で作られています。</p>
       <ul>
-        <li>Books are timeless. The basic &ldquo;book&rdquo; structure has persisted for hundreds of years and will continue to persist for our lifetimes, be it in digital or print form.</li>
-        <li>HTML is the markup language of the world for the foreseeable future.</li>
-        <li>Single-source document processing will remain valuable for the foreseeable future.</li>
+        <li>本は不朽のものです。通常の"本"の構造は100年続いており、そしてデジタルまたは印刷物のかたちで我々の生涯続くでしょう。</li>
+        <li>HTMLは近い将来のための世界のマークアップ言語です。</li>
+        <li>ワンソースのドキュメント処理は近い将来のために価値があり、存続するでしょう。</li>
       </ul>
-      <p>As such, HTMLBook can be characterized in the following ways:</p>
+      <p>HTMLBook自体は以下のように特徴づけられています:</p>
       <ul>
-        <li>HTMLBook is a subset of XHTML5. All HTMLBook is XHTML5, but not all XHTML5 is HTMLBook.</li>
-        <li>HTMLBook contains no additional elements or attributes outside of the XHTML5 specification.</li>
-        <li>HTMLBook is semantically tailored to the structure of a book, including more complex content used in technical and reference documents</li>
-        <li>HTMLBook is defined with and can be validated against an XML schema.</li>
-        <li>HTMLBook stylesheets are written in CSS.</li>
+        <li>HTMLBookはXHTML5のサブセットである。すべてのHTMLBookはXHTML5であるが、すべてのXHTML5がHTMLBookであるわけではない。</li>
+        <li>HTMLBookはXHTML5仕様にはない追加の要素や属性を含まない。</li>
+        <li>HTMLBookは、技術的ドキュメントまたはリファレンスドキュメントで使用されるより複雑なコンテンツも含め、意味的に本の構造にあわせてある。</li>
+        <li>HTMLBookはXMLスキーマで定義されており、XMLスキーマで妥当性を検証できる。</li>
+        <li>HTMLBookのスタイルシートはCSSで記述されている。</li>
       </ul>
     </section>
     <section id="sotd">
     </section>
     <section>
-      <h2>Notes on the HTMLBook Specification</h2>
-      <p>Requirements for HTML5 elements in the HTMLBook specification are below. Special semantic inflections for <code>data-type</code> attributes, unless otherwise noted, come from <a href="http://idpf.org/epub/vocab/structure/">EPUB 3 Structural Semantics Vocabulary</a></p>
-      <p>Many content models refer to &ldquo;Block elements&rdquo; or &ldquo;Inline elements&rdquo;; please see <a href="#block_elements">Block Elements</a> and <a href="#inline_elements">Inline Elements</a> for the corresponding list of HTML5 elements that belong to each of these categories.</p>
-      <p>If no content model or attribute requirements are explicitly specified, then HTMLBook adopts the corresponding requirements in the [[!HTML5]] Specification</a></p>
+      <h2>HTMLBookに関する注記（原注）</h2>
+      <p>HTMLBook仕様でのHTML5要素の要件は以下の通り。 <code>data-type</code> 属性の特有の意味的活用については、別途注記がない限り <a href="http://idpf.org/epub/vocab/structure/">EPUB 3 Structural Semantics Vocabulary</a> による。</p>
+      <p>コンテンツモデルの多くについては「ブロック要素」または「インライン要素」を参照のこと；これらの各カテゴリに属するHTML5の要素の対応するリストについては、 <a href="#block_elements">Block Elements</a> および <a href="#inline_elements">Inline Elements</a> を参照のこと。</p>
+      <p>明記されていないコンテンツモデルまたは属性要件については、HTMLBookは [[!HTML5]] 仕様に対応する要件を採用している。</a></p>
     </section>
     <section>
-      <h2>Revision History and Notes</h2>
+      <h2>改訂履歴と注記</h2>
       <dl>
-        <dt>29 December 2013</dt>
-        <dd>Minor revisions for clarity</dd>
-        <dt>13 August 2013</dt>
-        <dd>Revised specification for footnote markup</dd>
-        <dt>3 July 2013</dt>
-        <dd>Changed spec to use the attribute <code>data-type</code> for specifying book-specific semantics instead of <code>class</code>. The <code>class</code> attribute is
-now free to be used for whatever user-defined semantics are desired, and there are no restrictions on <code>class</code> values. Users of the spec may want to replicate <code>data-type</code> values in the <code>class</code> attribute to facilitate CSS styling, but this is completely optional.</dd>
-        <dt>19 April 2013</dt>
-        <dd>First release of Working Draft</dd>
+        <dt>2013年12月29日</dt>
+        <dd>明確さのための小改訂</dd>
+        <dt>2013年8月13日</dt>
+        <dd>脚注のマークアップの仕様を改訂</dd>
+        <dt>2013年7月3日</dt>
+        <dd>本を特定するセマンティクスとして、 <code>class</code> の代わりに <code>data-type</code> 属性を使用するよう仕様を改訂。現時点では <code>class</code> 属性はユーザが望んで定義したセマンティクスとして自由に使用でき、かつ <code>class</code> の値に制約はない。仕様のユーザは <code>data-type</code> の値を <code>class</code> 属性の値に複製することにより容易にCSSでの体裁付与したいだろうが、これは完全に任意である。</dd>
+        <dt>2013年4月19日</dt>
+        <dd>ワーキングドラフト第1版リリース</dd>
       </dl>
     </section>
     <section data-type="sect1" id="_book_component_elements">
