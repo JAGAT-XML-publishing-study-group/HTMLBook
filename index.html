@@ -92,14 +92,14 @@ span[data-type=footnote] {
       </dl>
     </section>
     <section data-type="sect1" id="_book_component_elements">
-      <h1>Book Component elements</h1>
+      <h1>本の構成要素</h1>
       <section data-type="sect2" id="_book">
-        <h2>Book</h2>
-        <p><strong>HTML element</strong>: <code>&lt;body&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="book"</code> <span data-type="footnote">(Not in [[EPUB3SSV]]; from [[DOCBOOK]])</span></p>
-        <p><strong>Content model</strong>: First child must be <code>&lt;h1&gt;</code> that contains book title; then zero or more <code>&lt;h2&gt;</code> elements for subtitle content; then one or more Book Component elements as children (<code>&lt;div&gt;</code> for Part elements, <code>&lt;nav&gt;</code> for Table of Contents, and <code>&lt;section&gt;</code> elements for all other book divisions)</p>
+        <h2>本</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;body&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="book"</code> <span data-type="footnote">([[EPUB3SSV]]ではなく、[[DOCBOOK]]由来)</span></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は本の題名を含む <code>&lt;h1&gt;</code> であるべきである; 次に、副題名のコンテンツとして、0個またはそれ以上の <code>&lt;h2&gt;</code> 要素; 次に、子として1個またはそれ以上の本の構成要素 (編／部要素を表す <code>&lt;div&gt;</code> テーブルコンテンツを表す <code>&lt;nav&gt;</code> そしてそのほかすべての本の区分を表す <code>&lt;section&gt;</code> )</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting" data-code-language="html">&lt;body data-type="book"&gt;
   &lt;h1&gt;jQuery Cookbook&lt;/h1&gt;
@@ -107,7 +107,7 @@ span[data-type=footnote] {
     &lt;!-- Chapter content here --&gt;
   &lt;/section&gt;
 &lt;/body&gt;</pre>
-        <p><strong>Note</strong>: Just as in standard HTML5, <code>&lt;body&gt;</code> is a child of the root <code>&lt;html&gt;</code> element.</p>
+        <p><strong>原注</strong>: HTML5標準同様、 <code>&lt;body&gt;</code> はルート <code>&lt;html&gt;</code> 要素の子である。</p>
       </section>
       <section data-type="sect2" id="_chapter">
         <h2>Chapter</h2>
