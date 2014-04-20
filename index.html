@@ -110,12 +110,12 @@ span[data-type=footnote] {
         <p><strong>原注</strong>: HTML5標準同様、 <code>&lt;body&gt;</code> はルート <code>&lt;html&gt;</code> 要素の子である。</p>
       </section>
       <section data-type="sect2" id="_chapter">
-        <h2>Chapter</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="chapter"</code></p>
-        <p><strong>Content model</strong>: First child must be <code>&lt;h1&gt;</code> that contains chapter title; then zero or more <code>&lt;h2&gt;</code> elements for subtitle content; then zero or more Block Elements; then zero or more Sect1 children (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <h2>章</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="chapter"</code></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は章の題名を含む <code>&lt;h1&gt;</code> であるべきである。; 次に、副題名のコンテンツとして、0個またはそれ以上の <code>&lt;h2&gt;</code> 要素; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting">&lt;section data-type="chapter"&gt;
   &lt;!-- h1 used for all chapter titles --&gt;
@@ -127,12 +127,12 @@ span[data-type=footnote] {
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="_appendix">
-        <h2>Appendix</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="appendix"</code> or <code>data-type="afterword"</code>, depending on content</p>
-        <p><strong>Content model</strong>: First child must be <code>&lt;h1&gt;</code> that contains appendix title; then zero or more <code>&lt;h2&gt;</code> elements for subtitle content; then zero or more Block Elements; then zero or more Sect1 children (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <h2>付録</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: 内容によって <code>data-type="appendix"</code> または <code>data-type="afterword"</code></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は付録の題名を含む <code>&lt;h1&gt;</code> であるべきである。; 次に、副題名のコンテンツとして、0個またはそれ以上の <code>&lt;h2&gt;</code> 要素; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting">&lt;section data-type="appendix"&gt;
   &lt;h1&gt;Appendix Title&lt;/h1&gt;
