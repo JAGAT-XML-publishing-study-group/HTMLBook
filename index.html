@@ -145,12 +145,12 @@ span[data-type=footnote] {
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="_bibliography">
-        <h2>Bibliography</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="bibliography"</code></p>
-        <p><strong>Content model</strong>: First child must be either <code>&lt;h1&gt;</code> that contains bibliography title or <a href="#header_block">Header block</a> that contains bibliography title and optional subtitle content; then zero or more Block Elements; then zero or more Sect1 children (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <h2>書誌</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="bibliography"</code></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は書誌の題名を含む <code>&lt;h1&gt;</code> または書誌の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting">&lt;section data-type="bibliography"&gt;
   &lt;h1&gt;Bibliography Title&lt;/h1&gt;
@@ -161,13 +161,13 @@ span[data-type=footnote] {
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="glossary">
-        <h2>Glossary</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="glossary"</code></p>
-        <p><strong>Content model</strong>: First child must be either <code>&lt;h1&gt;</code> that contains glossary title or <a href="#header_block">Header block</a> that contains glossary title and optional subtitle content; then zero or more Block Elements; then zero or more Sect1 children (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <h2>用語集</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="glossary"</code></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は用語集の題名を含む <code>&lt;h1&gt;</code> または用語集の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p><strong>Best practices</strong>: List of glossary terms should be marked up using <code>&lt;dl&gt;</code> elements with a <code>data-type</code> of "glossary", with <code>&lt;dt&gt;</code> children with a <code>data-type</code> of "glossterm" and <code>&lt;dd&gt;</code> children with a <code>data-type</code> of "glossdef". Term text should be wrapped in a <code>&lt;dfn&gt;</code>. However, none of this is formally required by the spec.</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting">&lt;section data-type="glossary"&gt;
   &lt;h1&gt;Glossary Title&lt;/h1&gt;
@@ -182,12 +182,12 @@ span[data-type=footnote] {
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="_preface">
-        <h2>Preface</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="preface"</code>, <code>data-type="foreword"</code>, or <code>data-type="introduction"</code>, depending on content</p>
-        <p><strong>Content model</strong>: First child must be either <code>&lt;h1&gt;</code> that contains preface title or <a href="#header_block">Header block</a> that contains preface title and optional subtitle content; then zero or more Block Elements; then zero or more Sect1 children (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <h2>序文</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: 内容によって <code>data-type="preface"</code>, <code>data-type="foreword"</code>, または <code>data-type="introduction"</code></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は序文の題名を含む <code>&lt;h1&gt;</code> または序文の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting">&lt;section data-type="preface"&gt;
   &lt;h1&gt;Preface Title&lt;/h1&gt;
