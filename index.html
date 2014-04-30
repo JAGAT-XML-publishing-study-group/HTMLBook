@@ -165,7 +165,7 @@ span[data-type=footnote] {
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="glossary"</code></p>
         <p><strong>コンテンツモデル</strong>: 最初の子は用語集の題名を含む <code>&lt;h1&gt;</code> または用語集の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
-        <p><strong>Best practices</strong>: List of glossary terms should be marked up using <code>&lt;dl&gt;</code> elements with a <code>data-type</code> of "glossary", with <code>&lt;dt&gt;</code> children with a <code>data-type</code> of "glossterm" and <code>&lt;dd&gt;</code> children with a <code>data-type</code> of "glossdef". Term text should be wrapped in a <code>&lt;dfn&gt;</code>. However, none of this is formally required by the spec.</p>
+        <p><strong>効率的な手法</strong>: 用語集の用語の一覧は "glossary" の <code>data-type</code> の <code>&lt;dl&gt;</code> 要素、 "glossterm" の <code>data-type</code> の <code>&lt;dt&gt;</code> の子、 "glossdef" の <code>data-type</code> の <code>&lt;dd&gt;</code> の子を使用してマークアップすべきである。用語の文字列は <code>&lt;dfn&gt;</code> でラップすべきである。ただし、これは正式な仕様要件ではない。</p>
         <p>
           <strong>例</strong>
         </p>
@@ -313,11 +313,11 @@ span[data-type=footnote] {
       </section>
     </section>
     <section data-type="sect1" id="_block_elements">
-      <h1>Block elements</h1>
+      <h1>ブロック要素</h1>
       <section data-type="sect2" id="_paragraph">
-        <h2>Paragraph</h2>
-        <p><strong>HTML element</strong>: <code>&lt;p&gt;</code></p>
-        <p><strong>Example</strong>:</p>
+        <h2>パラグラフ</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;p&gt;</code></p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;p&gt;This is a standard paragraph with some &lt;em&gt;emphasized text&lt;/em&gt;&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_sidebar">
@@ -551,11 +551,11 @@ span[data-type=footnote] {
       </section>
     </section>
     <section data-type="sect1" id="_inline_elements">
-      <h1>Inline Elements</h1>
+      <h1>インライン要素</h1>
       <section data-type="sect2" id="_emphasis_generally_for_italic">
-        <h2>Emphasis (generally for italic)</h2>
-        <p><strong>HTML element</strong>: <code>&lt;em&gt;</code></p>
-        <p>Example:</p>
+        <h2>強調 (通常、斜体表記)</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;em&gt;</code></p>
+        <p>例:</p>
         <pre data-type="programlisting">&lt;p&gt;I &lt;em&gt;love&lt;/em&gt; HTML!&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_strong_generally_for_bold">
@@ -672,12 +672,12 @@ data-type="chapter"&gt;   &lt;header&gt;     &lt;h1&gt;Chapter title&lt;/h1&gt;
       </section>
     </section>
     <section data-type="sect1" id="_interactive_elements">
-      <h1>Interactive Elements</h1>
+      <h1>インタラクティブ要素</h1>
       <section data-type="sect2" id="_video">
-        <h2>Video</h2>
-        <p><strong>HTML element</strong>: <code>&lt;video&gt;</code></p>
-        <p><strong>Example</strong>:</p>
-        <p><strong>Note</strong>: Fallback content is <em>strongly recommended</em> for output formats that do not support HTML5 interactive content</p>
+        <h2>ビデオ</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;video&gt;</code></p>
+        <p><strong>例</strong>:</p>
+        <p><strong>原注</strong>: HTML5インタラクティブコンテンツをサポートしていない出力フォーマットのために、フォールバックコンテンツを<em>強く推奨する</em>。</p>
         <pre data-type="programlisting">&lt;video id="asteroids_video" width="480" height="270" controls="controls" poster="images/fallback_image.png"&gt;
 &lt;source src="video/html5_asteroids.mp4" type="video/mp4"/&gt;
 &lt;source src="video/html5_asteroids.ogg" type="video/ogg"/&gt;
@@ -711,14 +711,14 @@ Canvas handling.</p>
       </section>
     </section>
     <section data-type="sect1" id="_metadata">
-      <h1>Metadata</h1>
+      <h1>メタデータ</h1>
       <section data-type="sect2" id="_metadata_points">
-        <h2>Metadata points</h2>
-        <p><strong>HTML element</strong>: <code>&lt;meta&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>name</code> (for name of metadata point); <code>content</code>: (for value of metadata point)</p>
-        <p><strong>Content model</strong>: Empty</p>
-        <p><strong>Note</strong>: All <code>&lt;meta&gt;</code> elements must be children of the <code>&lt;head&gt;</code> element of the HTML file.</p>
-        <p><strong>Example</strong>:</p>
+        <h2>メタデータ項目</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;meta&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>name</code> (メタデータ項目の名称); <code>content</code>: (メタデータ項目の値)</p>
+        <p><strong>コンテンツモデル</strong>: なし</p>
+        <p><strong>原注</strong>: すべての <code>&lt;meta&gt;</code> 要素はHTMLファイルの <code>&lt;head&gt;</code> 要素の子であるべきである。</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;head&gt;
   &lt;title&gt;Title of the Book&lt;/title&gt;
   &lt;meta name="isbn-13" content="9781449344856"/&gt;
