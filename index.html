@@ -578,23 +578,23 @@ span[data-type=footnote] {
 like &lt;span data-type="strikethrough"&gt;strikethrough&lt;/span&gt;&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_footnote_endnote">
-        <h2>Footnote, endnote</h2>
-        <p><strong>HTML element</strong>: <code>&lt;span&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="footnote"</code></p>
-        <p>*Content model for footnote: text and/or zero or more Inline elements</p>
-        <p><strong>Example</strong>:</p>
+        <h2>脚注、巻末(章末)の注</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;span&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="footnote"</code></p>
+        <p>*脚注のコンテンツモデル: テキストおよび/またはゼロまたは複数のインライン要素</p>
+        <p><strong>例:</strong>:</p>
         <pre data-type="programlisting">&lt;p&gt;Five out of every six people who try AsciiDoc prefer it to 
 Markdown&lt;span data-type="footnote"&gt;Totally made-up statistic&lt;/span&gt;&lt;/p&gt;</pre>
-        <p><strong>Notes</strong>:</p>
+        <p><strong>原注</strong>:</p>
         <ul>
           <li>
-            <p>The <code>&lt;span&gt;</code> element does not accept block element children (and as of 2013-08-13, nor does any other HTML5 element that can be used in an inline context and is an acceptable semantic fit for footnotes)). If you need to include multiple blocks of content in a footnote, use <code>&lt;br/&gt;</code> elements to delimit them, e.g.:</p>
+            <p><code>&lt;span&gt;</code>要素はブロック要素の子 (および 2013年8月13日現在、インラインコンテクストで使用され脚注と語義が一致して受容されるような他のいかなる HTML5 要素) を受け入れない。もし複数のコンテンツのブロックを脚注に含めたいのであれば、<code>&lt;br/&gt;</code>要素を使って区切る、例えば:</p>
           </li>
         <pre data-type="programlisting">&lt;p&gt;This is a really short paragraph.&lt;span data-type="footnote"&gt;Largely because I like 
 to put lots and lots of content in footnotes.&lt;br/&gt;&lt;br/&gt;
 For example, let me tell you a story about my dog...&lt;/span&gt;&lt;/p&gt;</pre>
           <li>
-            <p>Desired rendering of footnote content (i.e., floating/moving footnotes to the bottom of a page or end of a section, adding appropriate marker symbols/numeration) should be handled by XSL/CSS stylesheet processing.</p>
+            <p>脚注のコンテンツの望ましい表現 (例えば、ページ下部または節の後ろにフローティング/移動する脚注、適切なしるしや番号の追加) は XSL/CSS スタイルシートで処理されるはずである。</p>
           </li>
         </ul>
       </section>
