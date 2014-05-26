@@ -610,11 +610,11 @@ For example, let me tell you a story about my dog...&lt;/span&gt;&lt;/p&gt;</pre
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="_index_term">
-        <h2>Index Term</h2>
-        <p><strong>HTML element</strong>: <code>&lt;a&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="indexterm"</code>; for primary index entry value, use <code>data-primary</code>; for secondary index entry value, use <code>data-secondary</code>; for tertiary index entry value, use <code>data-tertiary</code>; for a "see" index reference, use <code>data-see</code>; for a "see also" index reference, use <code>data-seealso</code>; for a "sort" value to indicate alphabetization, use <code>data-primary-sortas</code>, <code>data-secondary-sortas</code>, or <code>data-tertiary-sortas</code>; for an "end-of-range" tag that marks the end of an index range, use <code>data-startref="id_of_opening_index_marker"</code> <span data-type="footnote">(Semantics from [[DOCBOOK]])</span></p>
-        <p><strong>Content model</strong>: Empty</p>
-        <p><strong>Example</strong>:</p>
+        <h2>索引語</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;a&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="indexterm"</code>、主たる索引の項目の値のためには <code>data-primary</code> を使う。第二位の索引の項目の値のためには <code>data-secondary</code> を使う。第三位の索引の項目の値のためには <code>data-tertiary</code> を使う。現在のものに代えて使うべき索引への参照のためには <code>data-see</code> を使う。現在のものに加えて使うべき索引への参照のためには <code>data-seealso</code> を使う。アルファベット順で並べて表示するための整理のための値のためには <code>data-primary-sortas</code> 、 <code>data-secondary-sortas</code> 、または <code>data-tertiary-sortas</code> を使う。索引の範囲の最後を示すためのタグのためには <code>data-startref="開始の索引マーカーのID"</code> <span data-type="footnote">([[DocBook]] の語義由来)</span> を使う。</p>
+        <p><strong>コンテンツモデル</strong>: なし</p>
+        <p><strong>例:</strong>:</p>
         <pre data-type="programlisting">&lt;p&gt;The Atlas build system&lt;a data-type="indexterm" data-primary="Atlas" data-secondary="build system"/&gt; lets 
 you build EPUB, Mobi, PDF, and HTML content&lt;/p&gt;</pre>
       </section>
