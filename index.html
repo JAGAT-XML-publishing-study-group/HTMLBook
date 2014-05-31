@@ -198,12 +198,12 @@ span[data-type=footnote] {
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="_frontmatter">
-        <h2>Frontmatter</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="halftitlepage"</code>, <code>data-type="titlepage"</code>, <code>data-type="copyright-page"</code>, or <code>data-type="dedication"</code>, depending on content</p>
-        <p><strong>Content model</strong>: First child must be either <code>&lt;h1&gt;</code> that contains frontmatter section title or <a href="#header_block">Header block</a> that contains frontmatter title and optional subtitle content; then zero or more Block Elements; then zero or more Sect1 children (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <h2>前付け</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: 内容によって <code>data-type="halftitlepage"</code>, <code>data-type="titlepage"</code>, <code>data-type="copyright-page"</code>, または <code>data-type="dedication"</code></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は前付けの題名を含む <code>&lt;h1&gt;</code> または前付けの題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting">&lt;section data-type="titlepage"&gt;
   &lt;h1&gt;Python in a Nutshell&lt;/h1&gt;
