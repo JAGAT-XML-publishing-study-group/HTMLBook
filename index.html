@@ -269,7 +269,7 @@ span[data-type=footnote] {
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="index"</code></p>
         <p><strong>コンテンツモデル</strong>: 最初の子は索引の題名を含む <code>&lt;h1&gt;</code> または索引の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
-        <p><strong>効率的な手法</strong>: HTMLBook は [[EPUBの索引]] 仕様に従い、必要に応じて意味の変化を使用できる <code>data-type</code>属性を持つ索引の見出し語をマークアップするために <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> 要素の使用をお勧めします。ただしこれは正式な仕様要件ではありません。</p>
+        <p><strong>効率的な手法</strong>: HTMLBook は [[EPUBの索引]] の仕様に従い、必要に応じて意味の変化を使用できる <code>data-type</code>属性を持つ索引の見出し語をマークアップするために <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> 要素の使用をお勧めします。ただしこれは正式な仕様要件ではありません。</p>
         <p>
           <strong>例</strong>
         </p>
@@ -289,17 +289,17 @@ span[data-type=footnote] {
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="_sections">
-        <h2>Sections</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="sect1"</code>, <code>data-type="sect2"</code>, <code>data-type="sect3"</code>, <code>data-type="sect4"</code>, <code>data-type="sect5"</code> <span data-type="footnote">(From [[DOCBOOK]] vocabulary)</span>, depending on hierarchy level. <code>sect1</code> is used for <code>&lt;section&gt;</code> elements nested directly in main Book components ("chapter", "appendix", etc.). <code>sect2</code> is used for <code>&lt;section&gt;</code> elements nested in a <code>sect1</code> <code>&lt;section&gt;</code>, <code>sect3</code> is used for <code>&lt;section&gt;</code> elements nested in a <code>sect2</code> <code>&lt;section&gt;</code>, and so on.</p>
-        <p><strong>Content model</strong>: The first child must either be a main heading element corresponding to the hierarchy level indicated by <code>data-type</code> value, as follows:</p>
+        <h2>節</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="sect1"</code>, <code>data-type="sect2"</code>, <code>data-type="sect3"</code>, <code>data-type="sect4"</code>, <code>data-type="sect5"</code> <span data-type="footnote">( [[DOCBOOK]] 語彙から)</span>, 階層レベルに応じて。 <code>sect1</code> は主な本の構成（章、付録　など）に直接ネストされた <code>&lt;section&gt;</code> 要素に使われる。 <code>sect2</code> は <code>sect1</code> <code>&lt;section&gt;</code> にネストされた<code>&lt;section&gt;</code> 要素に使われる。 <code>sect3</code> は <code>sect2</code> <code>&lt;section&gt;</code>にネストされた <code>&lt;section&gt;</code> 要素に使われる　など。</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は以下の <code>data-type</code> の値によって示される階層レベルに対応した主な見出し要素であるべきである。</p>
         <pre data-type="programlisting">"sect1" -&gt; h1
 "sect2" -&gt; h2
 "sect3" -&gt; h3
 "sect4" -&gt; h4
 "sect5" -&gt; h5</pre>
-<p>or a <a href="#header_block">Header block</a> that contains section title and optional subtitle content. This is followed by zero or more Block elements, followed by zero or more <code>&lt;section&gt;</code> elements with a <code>data-type</code> value one level lower in the hierarchy, as long as the parent section is a "sect4" or higher (e.g., <code>&lt;section data-type="sect4"&gt;</code> nested in <code>&lt;section data-type="sect3"&gt;</code>)</p>
-        <p><strong>Example</strong>:</p>
+<p>または節の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> 。 続いて0個以上のブロック要素。 続いて0個以上の一つ下の階層の <code>data-type</code> の値を持つ <code>&lt;section&gt;</code> 要素、親の節が "sect4" かそれより高い範囲に限る (例えば <code>&lt;section data-type="sect4"&gt;</code> は <code>&lt;section data-type="sect3"&gt;</code> にネストされる)</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;section data-type="sect1"&gt;
   &lt;h1&gt;A-Head&lt;/h1&gt;
   &lt;p&gt;If you httpparty, you must party hard&lt;/p&gt;
