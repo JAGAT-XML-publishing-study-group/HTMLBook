@@ -265,13 +265,13 @@ span[data-type=footnote] {
 &lt;/nav&gt;</pre>
       </section>
       <section data-type="sect2" id="_index">
-        <h2>Index</h2>
-        <p><strong>HTML element</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="index"</code></p>
-        <p><strong>Content model</strong>: First child must be either <code>&lt;h1&gt;</code> that contains index title or <a href="#header_block">Header block</a> that contains index title and optional subtitle content; then zero or more Block Elements; then zero or more Sect1 children (<code>&lt;section data-type="sect1"&gt;</code>)</p>
-        <p><strong>Best practices</strong>: HTMLBook recommends following the [[EPUBINDEX]] specification and using <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> elements for marking up index entries, with <code>data-type</code> attributes used for semantic inflection as appropriate, but none of this is a formal spec requirement</p>
+        <h2>索引</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="index"</code></p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は索引の題名を含む <code>&lt;h1&gt;</code> または索引の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>効率的な手法</strong>: HTMLBook は [[EPUBの索引]] 仕様に従い、必要に応じて意味の変化を使用できる <code>data-type</code>属性を持つ索引の見出し語をマークアップするために <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> 要素の使用をお勧めします。ただしこれは正式な仕様要件ではありません。</p>
         <p>
-          <strong>Example</strong>
+          <strong>例</strong>
         </p>
         <pre data-type="programlisting">&lt;section data-type="index"&gt;
   &lt;h1&gt;Index Title&lt;/h1&gt;
