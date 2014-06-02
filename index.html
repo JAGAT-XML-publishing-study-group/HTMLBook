@@ -444,27 +444,26 @@ span[data-type=footnote] {
 &lt;pre data-type="programlisting"&gt;print "Hello World"&lt;/pre&gt;
 &lt;/div&gt;</pre>
       </section>
-      <section data-type="sect2" id="_code_listings">
-        <h2>Code listings</h2>
-        <p><strong>HTML element</strong>: <code>&lt;pre&gt;</code></p>
-        <p><strong>Optional HTMLBook-specific attribute</strong>: <code>data-code-language</code>, used to indicate language of code listing (e.g., <code>data-code-language="python"</code>)</p>
-        <p><strong>Example</strong>:</p>
+        <h2>コードリスト</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;pre&gt;</code></p>
+        <p><strong>HTMLBook固有の属性オプション</strong>: <code>data-code-language</code>, コードリストの言語を示すために使用 (例： <code>data-code-language="python"</code>)</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;pre data-type="programlisting"&gt;print "&lt;em&gt;Hello World&lt;/em&gt;"&lt;/pre&gt;</pre>
       </section>
       <section data-type="sect2" id="_ordered_lists">
-        <h2>Ordered lists</h2>
-        <p><strong>HTML element</strong>: <code>&lt;ol&gt;</code></p>
-        <p><strong>Content model</strong>: Zero or more <code>&lt;li&gt;</code> children for each list item</p>
-        <p><strong>Content model for <code>&lt;li&gt;</code> children</strong>: Either of the following is acceptable:</p>
+        <h2>順序付きリスト</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;ol&gt;</code></p>
+        <p><strong>コンテンツモデル</strong>: 各リスト項目に0個以上の子要素<code>&lt;li&gt;</code>がある。</p>
+        <p><strong><code>&lt;li&gt;</code>の子要素のコンテンツモデルは</strong>: 以下のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>text and/or zero or more Inline elements</p>
+            <p>テキストおよび/または0個以上のインライン要素</p>
           </li>
           <li>
-            <p>Zero or more Block elements</p>
+            <p>0個以上のブロック要素</p>
           </li>
         </ul>
-        <p><strong>Example</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;ol&gt;
 &lt;li&gt;Step 1&lt;/li&gt;
 &lt;li&gt;
@@ -475,19 +474,19 @@ span[data-type=footnote] {
 &lt;/ol&gt;</pre>
       </section>
       <section data-type="sect2" id="_itemized_lists">
-        <h2>Itemized lists</h2>
-        <p><strong>HTML element</strong>: <code>&lt;ul&gt;</code></p>
-        <p><strong>Content model</strong>: Zero or more <code>&lt;li&gt;</code> children for each list item</p>
-        <p><strong>Content model for <code>&lt;li&gt;</code> children</strong>: Either of the following is acceptable:</p>
+        <h2>項目別リスト</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;ul&gt;</code></p>
+        <p><strong>コンテンツモデル</strong>: それぞれのリスト要素に0個以上の<code>&lt;li&gt;</code>子要素。</p>
+        <p><strong><code>&lt;li&gt;</code>の子要素のコンテンツモデルは</strong>: 以下のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>text and/or zero or more Inline elements</p>
+            <p>テキストおよび/または0個以上のインライン要素</p>
           </li>
           <li>
-            <p>Zero or more Block elements</p>
+            <p>0個以上のブロック要素</p>
           </li>
         </ul>
-        <p><strong>Example</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;ul&gt;
 &lt;li&gt;Red&lt;/li&gt;
 &lt;li&gt;Orange&lt;/li&gt;
@@ -495,20 +494,20 @@ span[data-type=footnote] {
 &lt;/ul&gt;</pre>
       </section>
       <section data-type="sect2" id="_definition_lists">
-        <h2>Definition lists</h2>
-        <p><strong>HTML element</strong>: <code>&lt;dl&gt;</code></p>
-        <p><strong>Content model</strong>: Mirrors HTML5 Specification</p>
-        <p><strong>Content model for <code>&lt;dt&gt;</code> children</strong>: text and/or zero or more Inline elements</p>
-        <p><strong>Content model for <code>&lt;dd&gt;</code> children</strong>: Either of the following is acceptable:</p>
+        <h2>定義リスト</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;dl&gt;</code></p>
+        <p><strong>コンテンツモデル</strong>: HTML5の仕様を反映する</p>
+        <p><strong><code>&lt;dt&gt;</code>の子要素のためのコンテンツモデル</strong>: テキストおよび/または0個以上のインライン要素</p>
+        <p><strong><code>&lt;dd&gt;</code>の子要素のためのコンテンツモデル</strong>: 以下のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>text and/or zero or more Inline elements</p>
+            <p>テキストおよび/または0個以上のインライン要素</p>
           </li>
           <li>
-            <p>Zero or more Block elements</p>
+            <p>0個以上のブロック要素</p>
           </li>
         </ul>
-        <p><strong>Example</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;dl&gt;
   &lt;dt&gt;Constant Width Bold font&lt;/dt&gt;
   &lt;dd&gt;Used to indicate user input&lt;/dd&gt;
@@ -516,17 +515,17 @@ span[data-type=footnote] {
       </section>
       <section data-type="sect2" id="_blockquote">
         <h2>Blockquote</h2>
-        <p><strong>HTML element</strong>: <code>&lt;blockquote&gt;</code></p>
-        <p><strong>Content model</strong>: Either of the following is acceptable:</p>
+        <p><strong>HTML要素</strong>: <code>&lt;blockquote&gt;</code></p>
+        <p><strong>コンテンツモデル</strong>: 次のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>text and/or zero or more Inline elements</p>
+            <p>テキストおよび/または0個以上のインライン要素</p>
           </li>
           <li>
-            <p>Zero or more Block elements</p>
+            <p>0個またはそれ以上のブロック要素</p>
           </li>
         </ul>
-        <p><strong>Example</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;blockquote data-type="epigraph"&gt;
   &lt;p&gt;When in the course of human events...&lt;/p&gt;
   &lt;p data-type="attribution"&gt;U.S. Declaration of Independence&lt;/p&gt;
