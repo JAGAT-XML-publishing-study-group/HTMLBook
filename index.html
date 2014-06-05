@@ -321,30 +321,30 @@ span[data-type=footnote] {
         <pre data-type="programlisting">&lt;p&gt;This is a standard paragraph with some &lt;em&gt;emphasized text&lt;/em&gt;&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_sidebar">
-        <h2>Sidebar</h2>
-        <p><strong>HTML element</strong>: <code>&lt;aside&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="sidebar"</code></p>
-        <p><strong>Content model</strong>: Zero or one <code>&lt;h5&gt;</code> element that contains the sidebar title); then zero or more Block elements</p>
-        <p><strong>Example</strong>:</p>
+        <h2>サイドバー要素</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;aside&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="sidebar"</code></p>
+        <p><strong>コンテンツモデル</strong>:ゼロ個または1個の <code>&lt;h5&gt;</code> 要素 ＋ ゼロ個以上のブロック要素 (サイドバーのタイトルを含む)</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;aside data-type="sidebar"&gt;
   &lt;h5&gt;Amusing Digression&lt;/h5&gt;
   &lt;p&gt;Did you know that in Boston, they call it "soda", and in Chicago, they call it "pop"?&lt;/p&gt;
 &lt;/aside&gt;</pre>
       </section>
       <section data-type="sect2" id="_admonitions">
-        <h2>Admonitions</h2>
-        <p><strong>HTML element</strong>: <code>&lt;div&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="note"</code>, <code>data-type="warning"</code>, <code>data-type="tip"</code>, <code>data-type="caution"</code>, or <code>data-type="important"</code>, depending on the content within</p>
-        <p><strong>Content model</strong>: Either of the following content models is acceptable:</p>
+        <h2>説諭要素</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;div&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="note"</code>, <code>data-type="warning"</code>, <code>data-type="tip"</code>, <code>data-type="caution"</code>, または <code>data-type="important"</code>, 配下のコンテンツに応じて</p>
+        <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>text and/or zero or more Inline elements</p>
+            <p>テキストおよびゼロ個以上のインライン要素</p>
           </li>
           <li>
-            <p>Zero or more <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> elements (for title and subtitles), followed by zero or more Block elements</p>
+            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 ＋ ゼロ個以上のブロック要素 (タイトルやサブタイトルのための)</p>
           </li>
         </ul>
-        <p><strong>Examples</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;div data-type="note"&gt;
   &lt;h1&gt;Helpful Info&lt;/h1&gt;
   &lt;p&gt;Please take note of this important information&lt;/p&gt;
@@ -352,31 +352,31 @@ span[data-type=footnote] {
         <pre data-type="programlisting">&lt;div data-type="warning"&gt;Make sure to get your AsciiDoc markup right!&lt;/div&gt;</pre>
       </section>
       <section data-type="sect2" id="_tables">
-        <h2>Tables</h2>
-        <p><strong>HTML element</strong>: <code>&lt;table&gt;</code></p>
-        <p><strong>Content model</strong>: Zero or one <code>&lt;caption&gt;</code> elements (for titled/captioned tables); then zero or more <code>&lt;colgroup&gt;</code> elements; then zero or more <code>&lt;thead&gt;</code> elements; then a choice between either zero or more <code>&lt;tbody&gt;</code> elements, or zero or more <code>&lt;tr&gt;</code> elements; then zero or more <code>&lt;tfoot&gt;</code> elements</p>
-        <p><strong>Content model for <code>&lt;caption&gt;</code></strong>: Either of the following is acceptable:</p>
+        <h2>テーブル要素</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;table&gt;</code></p>
+        <p><strong>コンテンツモデル</strong>: ゼロ個または1個の <code>&lt;caption&gt;</code> 要素 (テーブルのタイトル、キャプション) ＋ ゼロ個以上の <code>&lt;colgroup&gt;</code> 要素 ＋ <code>&lt;thead&gt;</code> 要素 (ゼロ個または1個のいずれかを、その後に続く要素によって選択) ＋ ゼロ個以上の <code>&lt;tbody&gt;</code> 要素 ＋ ゼロ個以上の <code>&lt;tr&gt;</code> 要素 ＋ <code>&lt;tfoot&gt;</code> 要素</p>
+        <p><strong>コンテンツモデル <code>&lt;caption&gt;</code> 要素</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>Zero or more <code>&lt;p&gt;</code> and/or <code>&lt;div&gt;</code> elements</p>
+            <p>ゼロ個以上の <code>&lt;p&gt;</code> 要素および <code>&lt;div&gt;</code> 要素</p>
           </li>
           <li>
-            <p>Text and/or zero or more Inline elements</p>
+            <p>テキストおよびゼロ個以上のインライン要素</p>
           </li>
         </ul>
-        <p><strong>Content model for <code>&lt;colgroup&gt;</code></strong>: Mirrors HTML5 Specification</p>
-        <p><strong>Content models for <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, and <code>&lt;tfoot&gt;</code></strong>: Mirror HTML5 Specification</p>
-        <p><strong>Content model for <code>&lt;tr&gt;</code></strong>: Mirrors HTML5 Specification, but see content model below for rules for child <code>&lt;td&gt;</code> and <code>&lt;th&gt;</code> elements</p>
-        <p><strong>Content model for <code>&lt;td&gt;</code> and <code>&lt;th&gt;</code> elements</strong>: Either of the following is acceptable:</p>
+        <p><strong>コンテンツモデル <code>&lt;colgroup&gt;</code> 要素</strong>: HTML5の仕様を参照</p>
+        <p><strong>コンテンツモデル <code>&lt;thead&gt;</code> 要素, <code>&lt;tbody&gt;</code> 要素, <code>&lt;tfoot&gt;</code> 要素</strong>: HTML5の仕様を参照</p>
+        <p><strong>コンテンツモデル <code>&lt;tr&gt;</code> 要素</strong>: HTML5の仕様を参照、ただし配下の <code>&lt;td&gt;</code> 要素や <code>&lt;th&gt;</code> 要素は下記の内容を参照</p>
+        <p><strong>コンテンツモデル <code>&lt;td&gt;</code> 要素, <code>&lt;th&gt;</code> 要素</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>text and/or zero or more Inline elements</p>
+            <p>テキストおよびゼロ個以上のインライン要素</p>
           </li>
           <li>
-            <p>Zero or more Block elements</p>
+            <p>ゼロ個以上のブロック要素</p>
           </li>
         </ul>
-        <p><strong>Examples</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;table&gt;
 &lt;caption&gt;State capitals&lt;/caption&gt;
 &lt;tr&gt;
@@ -408,37 +408,37 @@ span[data-type=footnote] {
 &lt;/table&gt;</pre>
       </section>
       <section data-type="sect2" id="_figures">
-        <h2>Figures</h2>
-        <p><strong>HTML element</strong>: <code>&lt;figure&gt;</code></p>
-        <p><strong>Content model</strong>: Either of the following is acceptable:</p>
+        <h2>図版要素</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;figure&gt;</code></p>
+        <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>A <code>&lt;figcaption&gt;</code> element followed by zero or more Block elements and/or <code>&lt;img&gt;</code> elements</p>
+            <p><code>&lt;figcaption&gt;</code> 要素、続いてゼロ個以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素</p>
           </li>
           <li>
-            <p>Zero or more Block elements and/or <code>&lt;img&gt;</code> elements, followed by a <code>&lt;figcaption&gt;</code> element</p>
+            <p>ゼロ個以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素、続いて <code>&lt;figcaption&gt;</code> 要素</p>
           </li>
         </ul>
-        <p><strong>Example</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;figure&gt;
 &lt;figcaption&gt;Adorable cat&lt;/figcaption&gt;
 &lt;img src="cute_kitty.gif" alt="Photo of an adorable cat"/&gt;
 &lt;/figure&gt;</pre>
       </section>
       <section data-type="sect2" id="_examples">
-        <h2>Examples</h2>
-        <p><strong>HTML element</strong>: <code>&lt;div&gt;</code></p>
-        <p><strong>Attribute requirements</strong>: <code>data-type="example"</code></p>
-        <p><strong>Content model</strong>: Either of the following content models is acceptable:</p>
+        <h2>例題要素</h2>
+        <p><strong>HTML要素</strong>: <code>&lt;div&gt;</code></p>
+        <p><strong>属性要件</strong>: <code>data-type="example"</code></p>
+        <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>text and/or zero or more Inline elements</p>
+            <p>テキストおよびゼロ個以上のインライン要素</p>
           </li>
           <li>
-            <p>Zero or more <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> elements (for title and subtitles), followed by zero or more Block elements</p>
+            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 (タイトルやサブタイトルのための)、続いてゼロ個以上のブロック要素</p>
           </li>
         </ul>
-        <p><strong>Example</strong>:</p>
+        <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;div data-type="example"&gt;
 &lt;h5&gt;Hello World in Python&lt;/h5&gt;
 &lt;pre data-type="programlisting"&gt;print "Hello World"&lt;/pre&gt;
