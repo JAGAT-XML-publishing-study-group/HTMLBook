@@ -115,7 +115,7 @@ span[data-type=footnote] {
         <h2>章</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="chapter"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は章の題名を含む <code>&lt;h1&gt;</code> または章題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は章の題名を含む <code>&lt;h1&gt;</code> または章題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -132,7 +132,7 @@ span[data-type=footnote] {
         <h2>付録</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: 内容によって <code>data-type="appendix"</code> または <code>data-type="afterword"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は付録の題名を含む <code>&lt;h1&gt;</code> または付録の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は付録の題名を含む <code>&lt;h1&gt;</code> または付録の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -148,7 +148,7 @@ span[data-type=footnote] {
         <h2>書誌</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="bibliography"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は書誌の題名を含む <code>&lt;h1&gt;</code> または書誌の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は書誌の題名を含む <code>&lt;h1&gt;</code> または書誌の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -164,7 +164,7 @@ span[data-type=footnote] {
         <h2>用語集</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="glossary"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は用語集の題名を含む <code>&lt;h1&gt;</code> または用語集の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は用語集の題名を含む <code>&lt;h1&gt;</code> または用語集の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p><strong>効率的な手法</strong>: 用語集の用語の一覧は "glossary" の <code>data-type</code> の <code>&lt;dl&gt;</code> 要素、 "glossterm" の <code>data-type</code> の <code>&lt;dt&gt;</code> の子、 "glossdef" の <code>data-type</code> の <code>&lt;dd&gt;</code> の子を使用してマークアップすべきである。用語の文字列は <code>&lt;dfn&gt;</code> でラップすべきである。ただし、これは正式な仕様要件ではない。</p>
         <p>
           <strong>例</strong>
@@ -185,7 +185,7 @@ span[data-type=footnote] {
         <h2>序文</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: 内容によって <code>data-type="preface"</code>, <code>data-type="foreword"</code>, または <code>data-type="introduction"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は序文の題名を含む <code>&lt;h1&gt;</code> または序文の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、0個またはそれ以上のブロック要素; 次に、0個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は序文の題名を含む <code>&lt;h1&gt;</code> または序文の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
