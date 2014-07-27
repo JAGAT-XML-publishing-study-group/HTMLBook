@@ -604,4 +604,90 @@
   <!-- Default rule for PDF bookmarks; do nothing for elements that aren't sections or Part divs -->
   <xsl:template match="*" mode="pdf-bookmark"/>
 
+<<<<<<< HEAD
+=======
+  <!-- Templates for handling of class values -->
+  <xsl:template match="*" mode="class.attribute">
+    <xsl:param name="xref.elements.pagenum.in.class" select="$xref.elements.pagenum.in.class"/>
+    <xsl:param name="xref.target"/>
+    <xsl:param name="class" select="@class"/>
+    <xsl:variable name="class.value">
+      <xsl:apply-templates select="." mode="class.value">
+	<xsl:with-param name="class" select="$class"/>
+	<xsl:with-param name="xref.elements.pagenum.in.class" select="$xref.elements.pagenum.in.class"/>
+	<xsl:with-param name="xref.target" select="$xref.target"/>
+      </xsl:apply-templates>
+    </xsl:variable>
+    <xsl:if test="normalize-space($class.value) != ''">
+      <xsl:attribute name="class">
+	<xsl:value-of select="$class.value"/>
+      </xsl:attribute>
+    </xsl:if>
+  </xsl:template>
+  
+  <!-- Default is to use supplied $class param as @class value -->
+  <xsl:template match="*" mode="class.value">
+    <xsl:param name="class" select="@class"/>
+    <xsl:param name="xref.elements.pagenum.in.class" select="$xref.elements.pagenum.in.class"/>
+    <xsl:param name="xref.target"/>
+    <xsl:value-of select="$class"/>
+  </xsl:template>
+
+  <xsl:template match="h:a[@data-type='xref']" mode="class.value">
+    <xsl:param name="class" select="@class"/>
+    <xsl:param name="xref.elements.pagenum.in.class" select="$xref.elements.pagenum.in.class"/>
+    <xsl:param name="xref.target"/>
+    <xsl:choose>
+      <!-- If there's an xref target, process that to determine whether a pagenum value should be added to the class -->
+      <xsl:when test="$xref.target">
+	<xsl:variable name="xref.target.semantic.name">
+	  <xsl:call-template name="semantic-name">
+	    <xsl:with-param name="node" select="$xref.target"/>
+	  </xsl:call-template>
+	</xsl:variable>
+	<xsl:if test="$class != ''">
+	  <xsl:value-of select="$class"/>
+	</xsl:if>
+	<!-- Check if target semantic name is in list of XREF elements containing pagenum -->
+	<!-- ToDo: Consider modularizing logic into separate function if needed for reuse elsewhere -->
+	<xsl:variable name="space-delimited-pagenum-elements" select="concat(' ', normalize-space($xref.elements.pagenum.in.class), ' ')"/>
+	<xsl:variable name="substring-before-target-name" select="substring-before($space-delimited-pagenum-elements, $xref.target.semantic.name)"/>
+	<xsl:variable name="substring-after-target-name" select="substring-after($space-delimited-pagenum-elements, $xref.target.semantic.name)"/>
+	<!-- Make sure a match is both preceded and followed by a space -->
+	<xsl:if test="substring($substring-after-target-name, 1, 1) and
+		      substring($substring-before-target-name, string-length($substring-before-target-name), 1)">
+	  <xsl:if test="$class != ''"><xsl:text> </xsl:text></xsl:if>
+	  <xsl:text>pagenum</xsl:text>
+	</xsl:if>
+      </xsl:when>
+      <xsl:otherwise>
+	<xsl:if test="$class != ''">
+	  <xsl:value-of select="$class"/>
+	</xsl:if>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- Returns 1 when a text node contains only whitespace (defined as standard space chars or nbsp chars) -->
+  <!-- Otherwise returns 0 -->
+  <xsl:template name="whitespace-only-in-text">
+    <xsl:param name="text.content" select="."/>
+    <xsl:choose>
+      <!-- Fine to consider empty text nodes to be whitespace-only; facilitates recursion here -->
+      <xsl:when test="string-length($text.content) = 0">1</xsl:when>
+      <xsl:when test="(substring($text.content, 1, 1) = ' ') or 
+		      (substring($text.content, 1, 1) = '&#xa0;')">
+	<!-- If first character is a whitespace char, recurse on rest of string to see if it's all whitespace -->
+	<xsl:call-template name="whitespace-only-in-text">
+	  <xsl:with-param name="text.content">
+	    <xsl:value-of select="substring($text.content, 2)"/>
+	  </xsl:with-param>
+	</xsl:call-template>
+      </xsl:when>
+      <!-- Otherwise, there's at least 1 text character, so return 0 (false) -->
+      <xsl:otherwise>0</xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+>>>>>>> ed32fde61f3a933271451b1b93c400cdcf64af13
 </xsl:stylesheet> 
