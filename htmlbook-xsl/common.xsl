@@ -98,9 +98,10 @@
   </xsl:template>
 
   <xsl:template match="h:table" mode="label.markup">
+    <xsl:param name="label.formal.with.ancestor" select="$label.formal.with.ancestor"/>
     <xsl:choose>
       <xsl:when test="$label.formal.with.ancestor != 0">
-	<xsl:apply-templates select="ancestor::h:section[contains(@data-type, 'acknowledgments') or
+	<xsl:apply-templates select="(ancestor::h:section[contains(@data-type, 'acknowledgments') or
 				     contains(@data-type, 'afterword') or
 				     contains(@data-type, 'appendix') or
 				     contains(@data-type, 'bibliography') or
@@ -116,54 +117,10 @@
 				     contains(@data-type, 'introduction') or
 				     contains(@data-type, 'preface') or
 				     contains(@data-type, 'titlepage') or
-				     contains(@data-type, 'toc')][last()]" mode="label.markup"/>
+				     contains(@data-type, 'toc')]|
+				     ancestor::h:div[@data-type = 'part'])[last()]" mode="label.markup"/>
 	<xsl:apply-templates select="." mode="intralabel.punctuation"/>
-	<xsl:number count="h:table" from="h:section[contains(@data-type, 'acknowledgments') or
-					  contains(@data-type, 'afterword') or
-					  contains(@data-type, 'appendix') or
-					  contains(@data-type, 'bibliography') or
-					  contains(@data-type, 'chapter') or
-					  contains(@data-type, 'colophon') or
-					  contains(@data-type, 'conclusion') or
-					  contains(@data-type, 'copyright-page') or
-					  contains(@data-type, 'dedication') or
-					  contains(@data-type, 'foreword') or
-					  contains(@data-type, 'glossary') or
-					  contains(@data-type, 'halftitlepage') or
-					  contains(@data-type, 'index') or
-					  contains(@data-type, 'introduction') or
-					  contains(@data-type, 'preface') or
-					  contains(@data-type, 'titlepage') or
-					  contains(@data-type, 'toc')]" level="any" format="1"/>
-      </xsl:when>
-      <xsl:otherwise>
-	<xsl:number count="h:table" level="any" format="1"/>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
-  <xsl:template match="h:figure" mode="label.markup">
-    <xsl:choose>
-      <xsl:when test="$label.formal.with.ancestor != 0">
-	<xsl:apply-templates select="ancestor::h:section[contains(@data-type, 'acknowledgments') or
-				     contains(@data-type, 'afterword') or
-				     contains(@data-type, 'appendix') or
-				     contains(@data-type, 'bibliography') or
-				     contains(@data-type, 'chapter') or
-				     contains(@data-type, 'colophon') or
-				     contains(@data-type, 'conclusion') or
-				     contains(@data-type, 'copyright-page') or
-				     contains(@data-type, 'dedication') or
-				     contains(@data-type, 'foreword') or
-				     contains(@data-type, 'glossary') or
-				     contains(@data-type, 'halftitlepage') or
-				     contains(@data-type, 'index') or
-				     contains(@data-type, 'introduction') or
-				     contains(@data-type, 'preface') or
-				     contains(@data-type, 'titlepage') or
-				     contains(@data-type, 'toc')][last()]" mode="label.markup"/>
-	<xsl:apply-templates select="." mode="intralabel.punctuation"/>
-	<xsl:number count="h:figure[not(contains(@data-type, 'cover'))]" from="h:section[contains(@data-type, 'acknowledgments') or
+	<xsl:number count="h:table[h:caption[. != '']]" from="h:section[contains(@data-type, 'acknowledgments') or
 					   contains(@data-type, 'afterword') or
 					   contains(@data-type, 'appendix') or
 					   contains(@data-type, 'bibliography') or
@@ -179,18 +136,20 @@
 					   contains(@data-type, 'introduction') or
 					   contains(@data-type, 'preface') or
 					   contains(@data-type, 'titlepage') or
-					   contains(@data-type, 'toc')]" level="any" format="1"/>
+					   contains(@data-type, 'toc')]|
+					   h:div[contains(@data-type, 'part')]" level="any" format="1"/>
       </xsl:when>
       <xsl:otherwise>
-	<xsl:number count="h:figure[not(contains(@data-type, 'cover'))]" level="any" format="1"/>
+	<xsl:number count="h:table[h:caption[. != '']]" level="any" format="1"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="h:div[contains(@data-type, 'example')]" mode="label.markup">
+  <xsl:template match="h:figure" mode="label.markup">
+    <xsl:param name="label.formal.with.ancestor" select="$label.formal.with.ancestor"/>
     <xsl:choose>
       <xsl:when test="$label.formal.with.ancestor != 0">
-	<xsl:apply-templates select="ancestor::h:section[contains(@data-type, 'acknowledgments') or
+	<xsl:apply-templates select="(ancestor::h:section[contains(@data-type, 'acknowledgments') or
 				     contains(@data-type, 'afterword') or
 				     contains(@data-type, 'appendix') or
 				     contains(@data-type, 'bibliography') or
@@ -206,31 +165,86 @@
 				     contains(@data-type, 'introduction') or
 				     contains(@data-type, 'preface') or
 				     contains(@data-type, 'titlepage') or
-				     contains(@data-type, 'toc')][last()]" mode="label.markup"/>
+				     contains(@data-type, 'toc')]|
+				     ancestor::h:div[@data-type = 'part'])[last()]" mode="label.markup"/>
 	<xsl:apply-templates select="." mode="intralabel.punctuation"/>
-	<xsl:number count="h:div[contains(@data-type, 'example')]" from="h:section[contains(@data-type, 'acknowledgments') or
-								     contains(@data-type, 'afterword') or
-								     contains(@data-type, 'appendix') or
-								     contains(@data-type, 'bibliography') or
-								     contains(@data-type, 'chapter') or
-								     contains(@data-type, 'colophon') or
-								     contains(@data-type, 'conclusion') or
-								     contains(@data-type, 'copyright-page') or
-								     contains(@data-type, 'dedication') or
-								     contains(@data-type, 'foreword') or
-								     contains(@data-type, 'glossary') or
-								     contains(@data-type, 'halftitlepage') or
-								     contains(@data-type, 'index') or
-								     contains(@data-type, 'introduction') or
-								     contains(@data-type, 'preface') or
-								     contains(@data-type, 'titlepage') or
-								     contains(@data-type, 'toc')]" level="any" format="1"/>
+	<xsl:number count="h:figure[not(contains(@data-type, 'cover'))][h:figcaption[. != '']]" from="h:section[contains(@data-type, 'acknowledgments') or
+					   contains(@data-type, 'afterword') or
+					   contains(@data-type, 'appendix') or
+					   contains(@data-type, 'bibliography') or
+					   contains(@data-type, 'chapter') or
+					   contains(@data-type, 'colophon') or
+					   contains(@data-type, 'conclusion') or
+					   contains(@data-type, 'copyright-page') or
+					   contains(@data-type, 'dedication') or
+					   contains(@data-type, 'foreword') or
+					   contains(@data-type, 'glossary') or
+					   contains(@data-type, 'halftitlepage') or
+					   contains(@data-type, 'index') or
+					   contains(@data-type, 'introduction') or
+					   contains(@data-type, 'preface') or
+					   contains(@data-type, 'titlepage') or
+					   contains(@data-type, 'toc')]|
+					   h:div[contains(@data-type, 'part')]" level="any" format="1"/>
+      </xsl:when>
+      <xsl:otherwise>
+	<xsl:number count="h:figure[not(contains(@data-type, 'cover'))][h:figcaption[. != '']]" level="any" format="1"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <xsl:template match="h:div[contains(@data-type, 'example')]" mode="label.markup">
+    <xsl:param name="label.formal.with.ancestor" select="$label.formal.with.ancestor"/>
+    <xsl:choose>
+      <xsl:when test="$label.formal.with.ancestor != 0">
+	<xsl:apply-templates select="(ancestor::h:section[contains(@data-type, 'acknowledgments') or
+				     contains(@data-type, 'afterword') or
+				     contains(@data-type, 'appendix') or
+				     contains(@data-type, 'bibliography') or
+				     contains(@data-type, 'chapter') or
+				     contains(@data-type, 'colophon') or
+				     contains(@data-type, 'conclusion') or
+				     contains(@data-type, 'copyright-page') or
+				     contains(@data-type, 'dedication') or
+				     contains(@data-type, 'foreword') or
+				     contains(@data-type, 'glossary') or
+				     contains(@data-type, 'halftitlepage') or
+				     contains(@data-type, 'index') or
+				     contains(@data-type, 'introduction') or
+				     contains(@data-type, 'preface') or
+				     contains(@data-type, 'titlepage') or
+				     contains(@data-type, 'toc')]|
+				     ancestor::h:div[@data-type = 'part'])[last()]" mode="label.markup"/>
+	<xsl:apply-templates select="." mode="intralabel.punctuation"/>
+	<xsl:number count="h:div[@data-type='example']" from="h:section[contains(@data-type, 'acknowledgments') or
+					   contains(@data-type, 'afterword') or
+					   contains(@data-type, 'appendix') or
+					   contains(@data-type, 'bibliography') or
+					   contains(@data-type, 'chapter') or
+					   contains(@data-type, 'colophon') or
+					   contains(@data-type, 'conclusion') or
+					   contains(@data-type, 'copyright-page') or
+					   contains(@data-type, 'dedication') or
+					   contains(@data-type, 'foreword') or
+					   contains(@data-type, 'glossary') or
+					   contains(@data-type, 'halftitlepage') or
+					   contains(@data-type, 'index') or
+					   contains(@data-type, 'introduction') or
+					   contains(@data-type, 'preface') or
+					   contains(@data-type, 'titlepage') or
+					   contains(@data-type, 'toc')]|
+					   h:div[contains(@data-type, 'part')]" level="any" format="1"/>
       </xsl:when>
       <xsl:otherwise>
 	<xsl:number count="h:div[contains(@data-type, 'example')]" level="any" format="1"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
+
+  <!-- No label markup for figures or tables with empty captions -->
+  <xsl:template match="h:figure[h:figcaption[normalize-space(.) = '']]|
+		       h:table[h:caption[normalize-space(.) = '']]" 
+		mode="label.markup"/>
 
   <xsl:template match="*" mode="label.markup"/>
 
@@ -253,17 +267,17 @@
   <xsl:template name="get-param-value-from-key">
     <xsl:param name="parameter"/>
     <xsl:param name="key"/>
-    <xsl:variable name="entry-and-beyond-for-data-type">
-      <!-- Gets the config line for numeration for the specified data-type...and everything beyond -->
+    <xsl:variable name="entry-and-beyond">
+      <!-- Gets the value corresponding to specified key...and everything beyond -->
       <xsl:value-of select="substring-after(normalize-space($parameter), concat($key, ':'))"/>
     </xsl:variable>
-    <!-- Then we further narrow to the exact numeration format type -->
+    <!-- Then we further narrow to just the key value -->
     <xsl:choose>
-      <xsl:when test="contains($entry-and-beyond-for-data-type, ' ')">
-	<xsl:value-of select="substring-before($entry-and-beyond-for-data-type, ' ')"/>
+      <xsl:when test="contains($entry-and-beyond, ' ')">
+	<xsl:value-of select="substring-before($entry-and-beyond, ' ')"/>
       </xsl:when>
       <xsl:otherwise>
-	<xsl:value-of select="$entry-and-beyond-for-data-type"/>
+	<xsl:value-of select="$entry-and-beyond"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -452,8 +466,8 @@
       </xsl:when>
       <xsl:when test="$node[self::h:aside]">
 	<xsl:choose>
-	  <xsl:when test="@data-type">
-	    <xsl:value-of select="@data-type"/>
+	  <xsl:when test="$node[@data-type]">
+	    <xsl:value-of select="$node/@data-type"/>
 	  </xsl:when>
 	  <xsl:otherwise>sidebar</xsl:otherwise>
 	</xsl:choose>
@@ -604,8 +618,6 @@
   <!-- Default rule for PDF bookmarks; do nothing for elements that aren't sections or Part divs -->
   <xsl:template match="*" mode="pdf-bookmark"/>
 
-<<<<<<< HEAD
-=======
   <!-- Templates for handling of class values -->
   <xsl:template match="*" mode="class.attribute">
     <xsl:param name="xref.elements.pagenum.in.class" select="$xref.elements.pagenum.in.class"/>
@@ -689,5 +701,4 @@
     </xsl:choose>
   </xsl:template>
 
->>>>>>> ed32fde61f3a933271451b1b93c400cdcf64af13
 </xsl:stylesheet> 
