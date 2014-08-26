@@ -590,7 +590,7 @@ like &lt;span data-type="strikethrough"&gt;strikethrough&lt;/span&gt;&lt;/p&gt;<
         <h2>脚注、巻末(章末)の注</h2>
         <p><strong>HTML要素</strong>: <code>&lt;span&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="footnote"</code></p>
-        <p>*脚注のコンテンツモデル: テキストおよび/またはゼロまたは複数のインライン要素</p>
+        <p>*脚注のコンテンツモデル: テキストおよび/またはゼロ個またはそれ以上のインライン要素</p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;p&gt;Five out of every six people who try AsciiDoc prefer it to 
 Markdown&lt;span data-type="footnote"&gt;Totally made-up statistic&lt;/span&gt;&lt;/p&gt;</pre>
@@ -645,7 +645,7 @@ you build EPUB, Mobi, PDF, and HTML content&lt;/p&gt;</pre>
       <section data-type="sect2" id="_headings">
         <h2>見出し</h2>
         <p><strong>HTML要素</strong>: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, or <code>&lt;h6&gt;</code></p>
-        <p><strong>コンテンツモデル</strong>: テキスト および/または ゼロまたは複数のインライン要素</p>
+        <p><strong>コンテンツモデル</strong>: テキスト および/または ゼロ個またはそれ以上のインライン要素</p>
         <p><strong>原注</strong>:多くの主な本の構成(例：章、部／編、付録) は見出しを必要とする。<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> からの適切な要素を下記に概説した、これらの構成に対応する文書にも同様に概説してある:</p>
         <pre data-type="programlisting">本のタイトル -&gt; h1
 部／編のタイトル -&gt; h1
@@ -666,7 +666,7 @@ sect5のタイトル -&gt; h5
       <section data-type="sect1" id="header_block">
 	<h1>ヘッダーブロック</h1>
 	<p><strong>HTML要素</strong>: <code>&lt;header&gt;</code></p>
-	<p><strong>コンテンツモデル</strong>: 前の <a href="#_headings">見出し</a> の節で述べた、親の本のコンポーネントに対して適切なレベルを指定した見出しの要素 (<code>h1</code>&ndash;<code>h5</code>) (例えば章の <code>&lt;header&gt;</code> に対する <code>&lt;h1&gt;</code> )。それから、副題または著者の属性のためのゼロまたは複数の <code>&lt;p&gt;</code> 要素。それらは <code>data-type</code> として <code>subtitle</code> または <code>author</code> を指定しなければならない。</p>
+	<p><strong>コンテンツモデル</strong>: 前の <a href="#_headings">見出し</a> の節で述べた、親の本のコンポーネントに対して適切なレベルを指定した見出しの要素 (<code>h1</code>&ndash;<code>h5</code>) (例えば章の <code>&lt;header&gt;</code> に対する <code>&lt;h1&gt;</code> )。それから、副題または著者の属性のためのゼロ個またはそれ以上の <code>&lt;p&gt;</code> 要素。それらは <code>data-type</code> として <code>subtitle</code> または <code>author</code> を指定しなければならない。</p>
 	<p><strong>例</strong>:</p>
 	<pre data-type="programlisting">&lt;section
 data-type="chapter"&gt;   &lt;header&gt;     &lt;h1&gt;Chapter title&lt;/h1&gt;
