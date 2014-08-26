@@ -527,11 +527,20 @@ span[data-type=footnote] {
           </li>
         </ul>
         <p><strong>例</strong>:</p>
-        <pre data-type="programlisting">&lt;blockquote data-type="epigraph"&gt;
+        <pre data-type="programlisting">&lt;blockquote"&gt;
   &lt;p&gt;When in the course of human events...&lt;/p&gt;
   &lt;p data-type="attribution"&gt;U.S. Declaration of Independence&lt;/p&gt;
 &lt;/blockquote&gt;</pre>
-      </section>
++ <p><strong>原注</strong>: もしblockquoteがepigraphならば，<code>data-type="epigraph"</code>を追加する。, 例:</p>
++ <pre data-type="programlisting">&lt;section data-type="chapter"&gt;
++ &lt;h1&gt;Conclusion&lt;/h1&gt;
++ &lt;blockquote data-type="epigraph"&gt;
++ &lt;p&gt;It ain't over till it's over.&lt;/p&gt;
++ &lt;p data-type="attribution"&gt;Yogi Berra&lt;/p&gt;
++ &lt;/blockquote&gt;
++ &lt;p&gt;In this final chapter of the book, we will&hellip;&lt;p&gt;
++&lt;/section&gt;</pre>
+</section>
       <section data-type="sect2" id="_equation">   
      <h2>方程式</h2>
         <p><strong>HTML要素</strong>: <code>&lt;div&gt;</code></p>
