@@ -298,7 +298,7 @@ span[data-type=footnote] {
 "sect3" -&gt; h3
 "sect4" -&gt; h4
 "sect5" -&gt; h5</pre>
-<p>または節の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> 。 続いてゼロ個以上のブロック要素。 続いてゼロ個以上の一つ下の階層の <code>data-type</code> の値を持つ <code>&lt;section&gt;</code> 要素、親の節が "sect4" かそれより高い範囲に限る (例えば <code>&lt;section data-type="sect4"&gt;</code> は <code>&lt;section data-type="sect3"&gt;</code> にネストされる)</p>
+<p>または節の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> 。 続いてゼロ個またはそれ以上のブロック要素。 続いてゼロ個以上の一つ下の階層の <code>data-type</code> の値を持つ <code>&lt;section&gt;</code> 要素、親の節が "sect4" かそれより高い範囲に限る (例えば <code>&lt;section data-type="sect4"&gt;</code> は <code>&lt;section data-type="sect3"&gt;</code> にネストされる)</p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;section data-type="sect1"&gt;
   &lt;h1&gt;A-Head&lt;/h1&gt;
@@ -338,10 +338,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>テキストおよびゼロ個以上のインライン要素</p>
+            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
           </li>
           <li>
-            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 ＋ ゼロ個以上のブロック要素 (タイトルやサブタイトルのための)</p>
+            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 ＋ ゼロ個またはそれ以上のブロック要素 (タイトルやサブタイトルのための)</p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -358,10 +358,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル <code>&lt;caption&gt;</code> 要素</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>ゼロ個以上の <code>&lt;p&gt;</code> 要素および <code>&lt;div&gt;</code> 要素</p>
+            <p>ゼロ個またはそれ以上の <code>&lt;p&gt;</code> 要素および <code>&lt;div&gt;</code> 要素</p>
           </li>
           <li>
-            <p>テキストおよびゼロ個以上のインライン要素</p>
+            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
           </li>
         </ul>
         <p><strong>コンテンツモデル <code>&lt;colgroup&gt;</code> 要素</strong>: HTML5の仕様を参照</p>
@@ -370,10 +370,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル <code>&lt;td&gt;</code> 要素, <code>&lt;th&gt;</code> 要素</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>テキストおよびゼロ個以上のインライン要素</p>
+            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
           </li>
           <li>
-            <p>ゼロ個以上のブロック要素</p>
+            <p>ゼロ個またはそれ以上のブロック要素</p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -413,10 +413,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p><code>&lt;figcaption&gt;</code> 要素、続いてゼロ個以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素</p>
+            <p><code>&lt;figcaption&gt;</code> 要素、続いてゼロ個またはそれ以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素</p>
           </li>
           <li>
-            <p>ゼロ個以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素、続いて <code>&lt;figcaption&gt;</code> 要素</p>
+            <p>ゼロ個またはそれ以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素、続いて <code>&lt;figcaption&gt;</code> 要素</p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -432,10 +432,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>テキストおよびゼロ個以上のインライン要素</p>
+            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
           </li>
           <li>
-            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 (タイトルやサブタイトルのための)、続いてゼロ個以上のブロック要素</p>
+            <p>ゼロ個またはそれ以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 (タイトルやサブタイトルのための)、続いてゼロ個以上のブロック要素</p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -477,7 +477,7 @@ span[data-type=footnote] {
       <section data-type="sect2" id="_itemized_lists">
         <h2>項目別リスト</h2>
         <p><strong>HTML要素</strong>: <code>&lt;ul&gt;</code></p>
-        <p><strong>コンテンツモデル</strong>: それぞれのリスト要素にゼロ個以上の<code>&lt;li&gt;</code>子要素。</p>
+        <p><strong>コンテンツモデル</strong>: それぞれのリスト要素にゼロ個またはそれ以上の<code>&lt;li&gt;</code>子要素。</p>
         <p><strong><code>&lt;li&gt;</code>の子要素のコンテンツモデルは</strong>: 以下のいずれかが許容されている:</p>
         <ul>
           <li>
