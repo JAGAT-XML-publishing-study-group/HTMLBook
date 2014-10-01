@@ -99,7 +99,7 @@ span[data-type=footnote] {
         <h2>本</h2>
         <p><strong>HTML要素</strong>: <code>&lt;body&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="book"</code> <span data-type="footnote">([[EPUB3SSV]]ではなく、[[DOCBOOK]]由来)</span></p>
-        <p><strong>コンテンツモデル</strong>: 本の題名を含む省略可能な <code>&lt;h1&gt;</code> または本の題名および省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> ; 次に、子として1個またはそれ以上の本の構成要素 (編／部要素を表す <code>&lt;div&gt;</code> テーブルコンテンツを表す <code>&lt;nav&gt;</code> そしてそのほかすべての本の区分を表す <code>&lt;section&gt;</code> )</p>
+        <p><strong>コンテンツモデル</strong>: 本の題名を含む省略可能な <code>&lt;h1&gt;</code> または本の題名および省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a>、次に、子として1個またはそれ以上の<a href="#_book_component_elements">本の構成要素</a> (<a href="#_part">部</a>要素を表す <code>&lt;div&gt;</code>、 <a href="#_table_of_contents">目次</a>を表す <code>&lt;nav&gt;</code>、そしてそのほかすべての本の区分を表す <code>&lt;section&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -115,7 +115,7 @@ span[data-type=footnote] {
         <h2>章</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="chapter"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は章の題名を含む <code>&lt;h1&gt;</code> または章題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は章の題名を含む <code>&lt;h1&gt;</code> または章題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -132,7 +132,7 @@ span[data-type=footnote] {
         <h2>付録</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: 内容によって <code>data-type="appendix"</code> または <code>data-type="afterword"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は付録の題名を含む <code>&lt;h1&gt;</code> または付録の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は付録の題名を含む <code>&lt;h1&gt;</code> または付録の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -148,7 +148,7 @@ span[data-type=footnote] {
         <h2>書誌</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="bibliography"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は書誌の題名を含む <code>&lt;h1&gt;</code> または書誌の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は書誌の題名を含む <code>&lt;h1&gt;</code> または書誌の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -164,8 +164,8 @@ span[data-type=footnote] {
         <h2>用語集</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="glossary"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は用語集の題名を含む <code>&lt;h1&gt;</code> または用語集の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
-        <p><strong>効率的な手法</strong>: 用語集の用語の一覧は "glossary" の <code>data-type</code> の <code>&lt;dl&gt;</code> 要素、 "glossterm" の <code>data-type</code> の <code>&lt;dt&gt;</code> の子、 "glossdef" の <code>data-type</code> の <code>&lt;dd&gt;</code> の子を使用してマークアップすべきである。用語の文字列は <code>&lt;dfn&gt;</code> でラップすべきである。ただし、これは正式な仕様要件ではない。</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は用語集の題名を含む <code>&lt;h1&gt;</code> または用語集の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>効率的な手法</strong>: 用語集の用語の一覧は <code>data-type</code> が "glossary" である <code>&lt;dl&gt;</code> 要素、<code>data-type</code> が "glossterm" である <code>&lt;dt&gt;</code> 子要素、 <code>data-type</code> が "glossdef" である <code>&lt;dd&gt;</code> 子要素を使用してマークアップすべきである。用語の文字列は <code>&lt;dfn&gt;</code> でラップすべきである。ただし、これは正式な仕様要件ではない。</p>
         <p>
           <strong>例</strong>
         </p>
@@ -185,7 +185,7 @@ span[data-type=footnote] {
         <h2>序文</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: 内容によって <code>data-type="preface"</code>, <code>data-type="foreword"</code>, または <code>data-type="introduction"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は序文の題名を含む <code>&lt;h1&gt;</code> または序文の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は序文の題名を含む <code>&lt;h1&gt;</code> または序文の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -201,7 +201,7 @@ span[data-type=footnote] {
         <h2>前付け</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: 内容によって <code>data-type="halftitlepage"</code>, <code>data-type="titlepage"</code>, <code>data-type="copyright-page"</code>, または <code>data-type="dedication"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は前付けの題名を含む <code>&lt;h1&gt;</code> または前付けの題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は前付けの題名を含む <code>&lt;h1&gt;</code> または前付けの題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -214,7 +214,7 @@ span[data-type=footnote] {
         <h2>後付け</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: 内容によって <code>data-type="colophon"</code>, <code>data-type="acknowledgments"</code>, <code>data-type="afterword"</code>, または <code>data-type="conclusion"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は後付けの題名を含む <code>&lt;h1&gt;</code> または後付けの題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は後付けの題名を含む <code>&lt;h1&gt;</code> または後付けの題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -227,10 +227,10 @@ span[data-type=footnote] {
 &lt;/section&gt;</pre>
       </section>
       <section data-type="sect2" id="_part">
-        <h2>部／編</h2>
+        <h2>部</h2>
         <p><strong>HTML要素</strong>: <code>&lt;div&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="part"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は部／編の題名を含む <code>&lt;h1&gt;</code> または部／編の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである; 次に、ゼロ個またはそれ以上の任意の部／編を構成するブロック要素; 次に、部／編以外の子として本の構成を表すゼロ個またはそれ以上の <code>&lt;section&gt;</code> の子</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は部の題名を含む <code>&lt;h1&gt;</code> または部の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、任意の部の導入を構成するゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、部以外の<a href="#_book_component_elements">本の構成要素</a>を表すゼロ個以上の <code>&lt;section&gt;</code></p>
         <p>
           <strong>例</strong>
         </p>
@@ -246,7 +246,7 @@ span[data-type=footnote] {
         <h2>目次</h2>
         <p><strong>HTML要素</strong>: <code>&lt;nav&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="toc"</code></p>
-        <p><strong>コンテンツモデル</strong>: 目次は [[EPUB3]] <a href="http://www.idpf.org/epub/30/spec/epub30-contentdocs-20111011.html#sec-xhtml-nav">ナビゲーション文書</a>. 最初の子はゼロ個またはそれ以上の見出し要素 (<code>&lt;h1&gt;-&lt;h6&gt;</code>), 続いて <code>&lt;ol&gt;</code> (<code>&lt;li&gt;</code> の子とともに <code>&lt;span&gt;</code> 要素や 任意の <code>&lt;ol&gt;</code> の子をあわせて <code>&lt;a&gt;</code> 要素を含めることができる)</p>
+        <p><strong>コンテンツモデル</strong>: 目次は [[EPUB3]] <a href="http://www.idpf.org/epub/30/spec/epub30-contentdocs-20111011.html#sec-xhtml-nav">ナビゲーション文書</a>の仕様に適合しなければならない。最初の子はゼロ個以上の<a href="#_headings">見出し要素</a> (<code>&lt;h1&gt;-&lt;h6&gt;</code>)、続いて <code>&lt;ol&gt;</code> (<code>&lt;li&gt;</code> 子要素を持ち、それはひとつの <code>&lt;span&gt;</code> 要素か <code>&lt;a&gt;</code> 要素、それに加え、任意の <code>&lt;ol&gt;</code> 子要素だけを含めることができる)</p>
         <p>
           <strong>例</strong>
         </p>
@@ -268,8 +268,8 @@ span[data-type=footnote] {
         <h2>索引</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="index"</code></p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は索引の題名を含む <code>&lt;h1&gt;</code> または索引の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。; 次に、ゼロ個またはそれ以上のブロック要素; 次に、ゼロ個またはそれ以上のSect1の子 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
-        <p><strong>効率的な手法</strong>: HTMLBook は [[EPUBの索引]] の仕様に従い、必要に応じて意味の変化を使用できる <code>data-type</code>属性を持つ索引の見出し語をマークアップするために <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> 要素の使用をお勧めします。ただしこれは正式な仕様要件ではありません。</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は索引の題名を含む <code>&lt;h1&gt;</code> または索引の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> であるべきである。次に、ゼロ個以上の<a href="#block_elements">ブロック要素</a>、次に、ゼロ個以上の <a href="#_sections">Sect1</a> 子要素 (<code>&lt;section data-type="sect1"&gt;</code>)</p>
+        <p><strong>効率的な手法</strong>: HTMLBook は [[EPUBINDEX]] の仕様に従い、必要に応じて意味の変化を使用できる <code>data-type</code>属性を持つ索引の見出し語をマークアップするために <code>&lt;ol&gt;</code>/<code>&lt;li&gt;</code> 要素の使用をお勧めします。ただしこれは正式な仕様要件ではありません。</p>
         <p>
           <strong>例</strong>
         </p>
@@ -291,14 +291,14 @@ span[data-type=footnote] {
       <section data-type="sect2" id="_sections">
         <h2>節</h2>
         <p><strong>HTML要素</strong>: <code>&lt;section&gt;</code></p>
-        <p><strong>属性要件</strong>: <code>data-type="sect1"</code>, <code>data-type="sect2"</code>, <code>data-type="sect3"</code>, <code>data-type="sect4"</code>, <code>data-type="sect5"</code> <span data-type="footnote">( [[DOCBOOK]] 語彙から)</span>, 階層レベルに応じて。 <code>sect1</code> は主な本の構成（章、付録　など）に直接ネストされた <code>&lt;section&gt;</code> 要素に使われる。 <code>sect2</code> は <code>sect1</code> <code>&lt;section&gt;</code> にネストされた<code>&lt;section&gt;</code> 要素に使われる。 <code>sect3</code> は <code>sect2</code> <code>&lt;section&gt;</code>にネストされた <code>&lt;section&gt;</code> 要素に使われる　など。</p>
-        <p><strong>コンテンツモデル</strong>: 最初の子は以下の <code>data-type</code> の値によって示される階層レベルに対応した主な見出し要素であるべきである。</p>
+        <p><strong>属性要件</strong>: <code>data-type="sect1"</code>, <code>data-type="sect2"</code>, <code>data-type="sect3"</code>, <code>data-type="sect4"</code>, <code>data-type="sect5"</code> <span data-type="footnote">( [[DOCBOOK]] 語彙から)</span>, 階層レベルに応じて。 <code>sect1</code> は主な<a href="#_book_component_elements">本の構成要素</a> (章、付録、など) に直接ネストされた <code>&lt;section&gt;</code> 要素に使われる。 <code>sect2</code> は <code>sect1</code> <code>&lt;section&gt;</code> にネストされた<code>&lt;section&gt;</code> 要素に使われる。 <code>sect3</code> は <code>sect2</code> <code>&lt;section&gt;</code>にネストされた <code>&lt;section&gt;</code> 要素に使われる、など。</p>
+        <p><strong>コンテンツモデル</strong>: 最初の子は以下の <code>data-type</code> の値によって示される階層レベルに対応した主な<a href="#_headings">見出し</a>要素であるべきである。</p>
         <pre data-type="programlisting">"sect1" -&gt; h1
 "sect2" -&gt; h2
 "sect3" -&gt; h3
 "sect4" -&gt; h4
 "sect5" -&gt; h5</pre>
-<p>または節の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> 。 続いてゼロ個またはそれ以上のブロック要素。 続いてゼロ個以上の一つ下の階層の <code>data-type</code> の値を持つ <code>&lt;section&gt;</code> 要素、親の節が "sect4" かそれより高い範囲に限る (例えば <code>&lt;section data-type="sect4"&gt;</code> は <code>&lt;section data-type="sect3"&gt;</code> にネストされる)</p>
+<p>または節の題名と省略可能な副題名コンテンツを含む <a href="#header_block">ヘッダーブロック</a> 。 続いてゼロ個以上の<a href="#block_elements">ブロック要素</a>。 続いてゼロ個以上の一つ下の階層の <code>data-type</code> の値を持つ <code>&lt;section&gt;</code> 要素、親の節が "sect4" かそれより高い範囲に限る (例えば <code>&lt;section data-type="sect4"&gt;</code> は <code>&lt;section data-type="sect3"&gt;</code> にネストされる)</p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;section data-type="sect1"&gt;
   &lt;h1&gt;A-Head&lt;/h1&gt;
@@ -324,7 +324,7 @@ span[data-type=footnote] {
         <h2>サイドバー要素</h2>
         <p><strong>HTML要素</strong>: <code>&lt;aside&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="sidebar"</code></p>
-        <p><strong>コンテンツモデル</strong>:ゼロ個または1個の <code>&lt;h5&gt;</code> 要素 ＋ ゼロ個以上のブロック要素 (サイドバーのタイトルを含む)</p>
+        <p><strong>コンテンツモデル</strong>: ゼロ個または1個の <code>&lt;h5&gt;</code> 要素 (サイドバーのタイトルを含む) ＋ ゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;aside data-type="sidebar"&gt;
   &lt;h5&gt;Amusing Digression&lt;/h5&gt;
@@ -338,10 +338,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
           <li>
-            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 ＋ ゼロ個またはそれ以上のブロック要素 (タイトルやサブタイトルのための)</p>
+            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 ＋ ゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -354,14 +354,14 @@ span[data-type=footnote] {
       <section data-type="sect2" id="_tables">
         <h2>テーブル要素</h2>
         <p><strong>HTML要素</strong>: <code>&lt;table&gt;</code></p>
-        <p><strong>コンテンツモデル</strong>: ゼロ個または1個の <code>&lt;caption&gt;</code> 要素 (テーブルのタイトル、キャプション) ＋ ゼロ個以上の <code>&lt;colgroup&gt;</code> 要素 ＋ <code>&lt;thead&gt;</code> 要素 (ゼロ個または1個のいずれかを、その後に続く要素によって選択) ＋ ゼロ個以上の <code>&lt;tbody&gt;</code> 要素 ＋ ゼロ個以上の <code>&lt;tr&gt;</code> 要素 ＋ <code>&lt;tfoot&gt;</code> 要素</p>
+        <p><strong>コンテンツモデル</strong>: ゼロ個または1個の <code>&lt;caption&gt;</code> 要素 (テーブルのタイトル、キャプション) ＋ ゼロ個以上の <code>&lt;colgroup&gt;</code> 要素 ＋ ゼロ個以上の <code>&lt;thead&gt;</code> 要素 ＋ ゼロ個以上の <code>&lt;tbody&gt;</code> 要素、または、ゼロ個以上の <code>&lt;tr&gt;</code> 要素 ＋ ゼロ個以上の <code>&lt;tfoot&gt;</code> 要素</p>
         <p><strong>コンテンツモデル <code>&lt;caption&gt;</code> 要素</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>ゼロ個またはそれ以上の <code>&lt;p&gt;</code> 要素および <code>&lt;div&gt;</code> 要素</p>
+            <p>ゼロ個以上の <code>&lt;p&gt;</code> 要素および/または <code>&lt;div&gt;</code> 要素</p>
           </li>
           <li>
-            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
         </ul>
         <p><strong>コンテンツモデル <code>&lt;colgroup&gt;</code> 要素</strong>: HTML5の仕様を参照</p>
@@ -370,10 +370,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル <code>&lt;td&gt;</code> 要素, <code>&lt;th&gt;</code> 要素</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
           <li>
-            <p>ゼロ個またはそれ以上のブロック要素</p>
+            <p>ゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -413,10 +413,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p><code>&lt;figcaption&gt;</code> 要素、続いてゼロ個またはそれ以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素</p>
+            <p><code>&lt;figcaption&gt;</code> 要素、続いてゼロ個以上の<a href="#block_elements">ブロック要素</a>および/または <code>&lt;img&gt;</code> 要素</p>
           </li>
           <li>
-            <p>ゼロ個またはそれ以上のブロック要素 ＋ <code>&lt;img&gt;</code> 要素、続いて <code>&lt;figcaption&gt;</code> 要素</p>
+            <p>ゼロ個以上の<a href="#block_elements">ブロック要素</a> ＋ <code>&lt;img&gt;</code> 要素、続いて <code>&lt;figcaption&gt;</code> 要素</p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -432,10 +432,10 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル</strong>: 以下のいずれか</p>
         <ul>
           <li>
-            <p>テキストおよびゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
           <li>
-            <p>ゼロ個またはそれ以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 (タイトルやサブタイトルのための)、続いてゼロ個以上のブロック要素</p>
+            <p>ゼロ個以上の <code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> 要素 (タイトルやサブタイトルのための)、続いてゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -454,14 +454,14 @@ span[data-type=footnote] {
       <section data-type="sect2" id="_ordered_lists">
         <h2>順序付きリスト</h2>
         <p><strong>HTML要素</strong>: <code>&lt;ol&gt;</code></p>
-        <p><strong>コンテンツモデル</strong>: 各リスト項目にゼロ個またはそれ以上の子要素<code>&lt;li&gt;</code>がある。</p>
-        <p><strong><code>&lt;li&gt;</code>の子要素のコンテンツモデルは</strong>: 以下のいずれかが許容されている:</p>
+        <p><strong>コンテンツモデル</strong>: 各リスト項目にゼロ個以上の <code>&lt;li&gt;</code> 子要素</p>
+        <p><strong><code>&lt;li&gt;</code> 子要素のコンテンツモデル</strong>: 以下のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>テキストおよび/またはゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
           <li>
-            <p>ゼロ個またはそれ以上のブロック要素</p>
+            <p>ゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -477,14 +477,14 @@ span[data-type=footnote] {
       <section data-type="sect2" id="_itemized_lists">
         <h2>項目別リスト</h2>
         <p><strong>HTML要素</strong>: <code>&lt;ul&gt;</code></p>
-        <p><strong>コンテンツモデル</strong>: それぞれのリスト要素にゼロ個またはそれ以上の<code>&lt;li&gt;</code>子要素。</p>
-        <p><strong><code>&lt;li&gt;</code>の子要素のコンテンツモデルは</strong>: 以下のいずれかが許容されている:</p>
+        <p><strong>コンテンツモデル</strong>: 各リスト項目にゼロ個以上の <code>&lt;li&gt;</code> 子要素</p>
+        <p><strong><code>&lt;li&gt;</code> 子要素のコンテンツモデル</strong>: 以下のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>テキストおよび/またはゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
           <li>
-            <p>ゼロ個またはそれ以上のブロック要素</p>
+            <p>ゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -498,14 +498,14 @@ span[data-type=footnote] {
         <h2>定義リスト</h2>
         <p><strong>HTML要素</strong>: <code>&lt;dl&gt;</code></p>
         <p><strong>コンテンツモデル</strong>: HTML5の仕様を反映する</p>
-        <p><strong><code>&lt;dt&gt;</code>の子要素のためのコンテンツモデル</strong>: テキストおよび/またはゼロ個またはそれ以上のインライン要素</p>
-        <p><strong><code>&lt;dd&gt;</code>の子要素のためのコンテンツモデル</strong>: 以下のいずれかが許容されている:</p>
+        <p><strong><code>&lt;dt&gt;</code>子要素のコンテンツモデル</strong>: テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
+        <p><strong><code>&lt;dd&gt;</code>子要素のコンテンツモデル</strong>: 以下のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>テキストおよび/またはゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
           <li>
-            <p>ゼロ個またはそれ以上のブロック要素</p>
+            <p>ゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
@@ -520,32 +520,32 @@ span[data-type=footnote] {
         <p><strong>コンテンツモデル</strong>: 次のいずれかが許容されている:</p>
         <ul>
           <li>
-            <p>テキストおよび/またはゼロ個またはそれ以上のインライン要素</p>
+            <p>テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
           </li>
           <li>
-            <p>ゼロ個またはそれ以上のブロック要素</p>
+            <p>ゼロ個以上の<a href="#block_elements">ブロック要素</a></p>
           </li>
         </ul>
         <p><strong>例</strong>:</p>
-        <pre data-type="programlisting">&lt;blockquote"&gt;
+        <pre data-type="programlisting">&lt;blockquote&gt;
   &lt;p&gt;When in the course of human events...&lt;/p&gt;
   &lt;p data-type="attribution"&gt;U.S. Declaration of Independence&lt;/p&gt;
 &lt;/blockquote&gt;</pre>
 <p><strong>原注</strong>: もしblockquoteがepigraphならば，<code>data-type="epigraph"</code>を追加する。例:</p>
 <pre data-type="programlisting">&lt;section data-type="chapter"&gt;
-&lt;h1&gt;Conclusion&lt;/h1&gt;
-&lt;blockquote data-type="epigraph"&gt;
-&lt;p&gt;It ain't over till it's over.&lt;/p&gt;
-&lt;p data-type="attribution"&gt;Yogi Berra&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In this final chapter of the book, we will&hellip;&lt;p&gt;
+  &lt;h1&gt;Conclusion&lt;/h1&gt;
+  &lt;blockquote data-type="epigraph"&gt;
+    &lt;p&gt;It ain't over till it's over.&lt;/p&gt;
+    &lt;p data-type="attribution"&gt;Yogi Berra&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;In this final chapter of the book, we will&hellip;&lt;p&gt;
 &lt;/section&gt;</pre>
-</section>
+      </section>
       <section data-type="sect2" id="_equation">   
      <h2>方程式</h2>
         <p><strong>HTML要素</strong>: <code>&lt;div&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="equation"</code> <span data-type="footnote">([[EPUB3SSV]]でなく [[DOCBOOK]]由来])</span></p>
-        <p>*原注: HTMLBookは、HTML文書にエンベッドしたMathMLをサポートしており、それはここで使用できる。</p>
+        <p><strong>原注</strong>: HTMLBookは、HTML文書にエンベッドしたMathMLをサポートしており、それはここで使用できる。</p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;div data-type="equation"&gt;
 &lt;h5&gt;Pythagorean Theorem&lt;/h5&gt;
@@ -580,28 +580,28 @@ span[data-type=footnote] {
         <pre data-type="programlisting">&lt;p&gt;Enter &lt;code&gt;echo "Hello World"&lt;/code&gt; on the command line&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_general_purpose_phrase_markup_for_other_styling_underline_strikethrough_etc">
-        <h2>その他の体裁 (下線、取り消し線、等。)のための、多目的な区切りのマークアップ</h2>
+        <h2>その他の体裁 (下線、取り消し線、等) のための、多目的なフレーズのマークアップ</h2>
         <p><strong>HTML要素</strong>: <code>&lt;span&gt;</code></p>
         <p>例:</p>
         <pre data-type="programlisting">&lt;p&gt;Use your own data-type or class attributes for custom styling for formatting 
 like &lt;span data-type="strikethrough"&gt;strikethrough&lt;/span&gt;&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_footnote_endnote">
-        <h2>脚注、巻末(章末)の注</h2>
+        <h2>脚注、末注</h2>
         <p><strong>HTML要素</strong>: <code>&lt;span&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="footnote"</code></p>
-        <p>*脚注のコンテンツモデル: テキストおよび/またはゼロ個またはそれ以上のインライン要素</p>
+        <p><strong>コンテンツモデル</strong>: テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;p&gt;Five out of every six people who try AsciiDoc prefer it to 
 Markdown&lt;span data-type="footnote"&gt;Totally made-up statistic&lt;/span&gt;&lt;/p&gt;</pre>
         <p><strong>原注</strong>:</p>
         <ul>
           <li>
-            <p><code>&lt;span&gt;</code>要素はブロック要素の子 (および 2013年8月13日現在、インラインコンテクストで使用され脚注と語義が一致して受容されるような他のいかなる HTML5 要素) を受け入れない。もし複数のコンテンツのブロックを脚注に含めたいのであれば、<code>&lt;br/&gt;</code>要素を使って区切る、例えば:</p>
-          </li>
+            <p><code>&lt;span&gt;</code>要素はブロック要素の子 (および 2014年4月現在、インラインコンテクストで使用され脚注として意味的に受容されるような他のいかなる HTML5 要素も) を受け入れない。もし複数のコンテンツのブロックを脚注に含めたいのであれば、<code>&lt;br/&gt;</code>要素を使って区切る、例えば:</p>
         <pre data-type="programlisting">&lt;p&gt;This is a really short paragraph.&lt;span data-type="footnote"&gt;Largely because I like 
 to put lots and lots of content in footnotes.&lt;br/&gt;&lt;br/&gt;
 For example, let me tell you a story about my dog...&lt;/span&gt;&lt;/p&gt;</pre>
+          </li>
           <li>
             <p>脚注のコンテンツの望ましい表現 (例えば、ページ下部または節の後ろにフローティング/移動する脚注、適切なしるしや番号の追加) は XSL/CSS スタイルシートで処理されるはずである。</p>
           </li>
@@ -621,7 +621,7 @@ For example, let me tell you a story about my dog...&lt;/span&gt;&lt;/p&gt;</pre
       <section data-type="sect2" id="_index_term">
         <h2>索引語</h2>
         <p><strong>HTML要素</strong>: <code>&lt;a&gt;</code></p>
-        <p><strong>属性要件</strong>: <code>data-type="indexterm"</code>、主たる索引の項目の値のためには <code>data-primary</code> を使う。第二位の索引の項目の値のためには <code>data-secondary</code> を使う。第三位の索引の項目の値のためには <code>data-tertiary</code> を使う。現在のものに代えて使うべき索引への参照のためには <code>data-see</code> を使う。現在のものに加えて使うべき索引への参照のためには <code>data-seealso</code> を使う。アルファベット順で並べて表示するための整理のための値のためには <code>data-primary-sortas</code> 、 <code>data-secondary-sortas</code> 、または <code>data-tertiary-sortas</code> を使う。索引の範囲の最後を示すためのタグのためには <code>data-startref="開始の索引マーカーのID"</code> <span data-type="footnote">([[DOCBOOK]] の語義由来)</span> を使う。</p>
+        <p><strong>属性要件</strong>: <code>data-type="indexterm"</code>。主たる索引の項目の値のためには <code>data-primary</code> を使う。第二位の索引の項目の値のためには <code>data-secondary</code> を使う。第三位の索引の項目の値のためには <code>data-tertiary</code> を使う。現在のものに代えて使うべき索引への参照のためには <code>data-see</code> を使う。現在のものに加えて使うべき索引への参照のためには <code>data-seealso</code> を使う。アルファベット順で並べて表示するための整理のための値のためには <code>data-primary-sortas</code> 、 <code>data-secondary-sortas</code> 、または <code>data-tertiary-sortas</code> を使う。索引の範囲の最後を示すためのタグのためには <code>data-startref="開始の索引マーカーのID"</code> <span data-type="footnote">([[DOCBOOK]] の語義由来)</span> を使う。</p>
         <p><strong>コンテンツモデル</strong>: なし</p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;p&gt;The Atlas build system&lt;a data-type="indexterm" data-primary="Atlas" data-secondary="build system"/&gt; lets 
@@ -645,10 +645,10 @@ you build EPUB, Mobi, PDF, and HTML content&lt;/p&gt;</pre>
       <section data-type="sect2" id="_headings">
         <h2>見出し</h2>
         <p><strong>HTML要素</strong>: <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, or <code>&lt;h6&gt;</code></p>
-        <p><strong>コンテンツモデル</strong>: テキスト および/または ゼロ個またはそれ以上のインライン要素</p>
-        <p><strong>原注</strong>:多くの主な本の構成(例：章、部／編、付録) は見出しを必要とする。<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> からの適切な要素を下記に概説した、これらの構成に対応する文書にも同様に概説してある:</p>
+        <p><strong>コンテンツモデル</strong>: テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
+        <p><strong>原注</strong>: 本の主な構成要素 (例：章、部、付録) の多くは見出しを必要とする。<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code> からの適切な要素は下記の通りである。これらの構成要素に対応する節にも同様に概説してある:</p>
         <pre data-type="programlisting">本のタイトル -&gt; h1
-部／編のタイトル -&gt; h1
+部のタイトル -&gt; h1
 章のタイトル -&gt; h1
 前書きのタイトル -&gt; h1
 付録のタイトル -&gt; h1
@@ -663,13 +663,14 @@ sect4のタイトル -&gt; h4
 sect5のタイトル -&gt; h5
 サイドバーのタイトル -&gt; h5</pre>
       </section>
-      <section data-type="sect1" id="header_block">
-	<h1>ヘッダーブロック</h1>
+      <section data-type="sect2" id="header_block">
+	<h2>ヘッダーブロック</h2>
 	<p><strong>HTML要素</strong>: <code>&lt;header&gt;</code></p>
-	<p><strong>コンテンツモデル</strong>: 前の <a href="#_headings">見出し</a> の節で述べた、親の本のコンポーネントに対して適切なレベルを指定した見出しの要素 (<code>h1</code>&ndash;<code>h5</code>) (例えば章の <code>&lt;header&gt;</code> に対する <code>&lt;h1&gt;</code> )。それから、副題または著者の属性のためのゼロ個またはそれ以上の <code>&lt;p&gt;</code> 要素。それらは <code>data-type</code> として <code>subtitle</code> または <code>author</code> を指定しなければならない。</p>
+	<p><strong>コンテンツモデル</strong>: 前の <a href="#_headings">見出し</a> の節で述べた、親の構成要素に対して適切なレベルを指定した見出しの要素 (<code>h1</code>&ndash;<code>h5</code>) (例えば章の <code>&lt;header&gt;</code> に対する <code>&lt;h1&gt;</code>)。それから、副題または著者の属性のためのゼロ個以上の <code>&lt;p&gt;</code> 要素。それらは <code>data-type</code> として <code>subtitle</code> または <code>author</code> を指定しなければならない。</p>
 	<p><strong>例</strong>:</p>
-	<pre data-type="programlisting">&lt;section
-data-type="chapter"&gt;   &lt;header&gt;     &lt;h1&gt;Chapter title&lt;/h1&gt;
+	<pre data-type="programlisting">&lt;section data-type="chapter"&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Chapter title&lt;/h1&gt;
     &lt;p data-type="subtitle"&gt;Chapter subtitle&lt;/p&gt;
   &lt;/header&gt;
   &lt;!-- Chapter content here... --&gt;
@@ -707,12 +708,22 @@ data-type="chapter"&gt;   &lt;header&gt;     &lt;h1&gt;Chapter title&lt;/h1&gt;
         <h2>キャンバス</h2>
         <p><strong>HTML要素</strong>: <code>&lt;canvas&gt;</code></p>
         <p><strong>原注</strong>: HTML5 または JavaScript をサポートしない環境のために、代替となるもの (例えばリンクまたは画像) を含めるべきである。
-HTMLBookのドキュメントの<code>&lt;head&gt;</code>要素に、キャンバスの操作のための JS のコードを含む/参照するような<code>&lt;script&gt;</code>要素を含めることができる。</p>
+HTMLBookドキュメントの<code>&lt;head&gt;</code>要素に、キャンバスの操作のための JS のコードを含む/参照するような<code>&lt;script&gt;</code>要素を含めることができる。</p>
         <p><strong>例</strong>:</p>
         <pre data-type="programlisting">&lt;canvas id="canvas" width="400" height="400"&gt;
  Your browser does not support the HTML 5 Canvas. See the interactive example at http://example.com.
 &lt;/canvas&gt;</pre>
       </section>
+    </section>
+    <section data-type="sect1" id="_comments">
+      <h1>コメント</h1>
+      <p>HTMLBookドキュメントにコメントを追加するには、標準のHTML/XMLのコメント構文を使用する:</p>
+      <pre data-type="programlisting">&lt;!-- This is a comment --&gt;</pre>
+
+      <p>または、<code>data-type="comment"</code> という属性を任意のHTML要素に追加する。例:</p>
+
+      <pre>&lt;div data-type="comment"&gt;This is a comment preceding a paragraph of text&lt;/div&gt;
+&lt;p&gt;This is a paragraph of text &lt;span data-type="comment"&gt;Inline comment in paragraph&lt;/span&gt;&lt;/p&gt;</pre>
     </section>
     <section data-type="sect1" id="_metadata">
       <h1>メタデータ</h1>
@@ -733,7 +744,7 @@ HTMLBookのドキュメントの<code>&lt;head&gt;</code>要素に、キャン�
       <h1>要素の種別</h1>
       <section data-type="sect2" id="block_elements">
         <h2>ブロック要素</h2>
-        <p>HTMLBookでは、HTML5仕様においてフローコンテンツ(除外されている要素はまた、ヘッディングコンテンツ、フレージングコンテンツ、またはセクショニングコンテンツとして分類されている)として分類されている要素の大多数はブロック要素として考えられている。一覧を示す:</p>
+        <p>HTMLBookでは、HTML5仕様において<a href="http://www.w3.org/TR/html5/dom.html#flow-content">フローコンテンツ</a>として分類されている要素の大多数 (<a href="http://www.w3.org/TR/html5/dom.html#heading-content">ヘッディングコンテンツ</a>、<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a>、または<a href="http://www.w3.org/TR/html5/dom.html#sectioning-content">セクショニングコンテンツ</a>としても分類されている要素を除く) はブロック要素として考えられている。一覧を示す:</p>
         <ul>
           <li>
             <p>
@@ -758,6 +769,11 @@ HTMLBookのドキュメントの<code>&lt;head&gt;</code>要素に、キャン�
           <li>
             <p>
               <code>&lt;canvas&gt;</code>
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>&lt;dd&gt;</code>
             </p>
           </li>
           <li>
@@ -811,7 +827,7 @@ HTMLBookのドキュメントの<code>&lt;head&gt;</code>要素に、キャン�
             </p>
           </li>
           <li>
-            <p><code>&lt;math&gt;</code> (MathMLの語彙; <a href="http://www.w3.org/1998/Math/MathML)">http://www.w3.org/1998/Math/MathMLの名前空間下に置かれるべき)</a></p>
+            <p><code>&lt;math&gt;</code> (MathMLの語彙; <code>http://www.w3.org/1998/Math/MathML</code> の名前空間下に置かれるべき)</p>
           </li>
           <li>
             <p>
@@ -839,7 +855,7 @@ HTMLBookのドキュメントの<code>&lt;head&gt;</code>要素に、キャン�
             </p>
           </li>
           <li>
-            <p><code>&lt;svg&gt;</code> (SVGの語彙; <a href="http://www.w3.org/2000/svg)">http://www.w3.org/2000/svgの名前空間下に置かれるべき)</a></p>
+            <p><code>&lt;svg&gt;</code> (SVGの語彙; <code>http://www.w3.org/2000/svg</code> の名前空間下に置かれるべき)</p>
           </li>
           <li>
             <p>
@@ -860,7 +876,7 @@ HTMLBookのドキュメントの<code>&lt;head&gt;</code>要素に、キャン�
       </section>
       <section data-type="sect2" id="inline_elements">
         <h2>インライン要素</h2>
-        <p>HTMLBookでは、HTML5仕様においてフレージングコンテンツとして分類されている要素の大多数はインライン要素として考えられている。一覧を示す:</p>
+        <p>HTMLBookでは、HTML5仕様において<a href="http://www.w3.org/TR/html5/dom.html#phrasing-content">フレージングコンテンツ</a>として分類されている要素の大多数はインライン要素として考えられている。一覧を示す:</p>
         <ul>
           <li>
             <p>
@@ -925,6 +941,11 @@ HTMLBookのドキュメントの<code>&lt;head&gt;</code>要素に、キャン�
           <li>
             <p>
               <code>&lt;dfn&gt;</code>
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>&lt;dt&gt;</code>
             </p>
           </li>
           <li>
