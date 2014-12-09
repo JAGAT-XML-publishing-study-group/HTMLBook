@@ -1,6 +1,6 @@
 === HTMLBook
 
-（この文書は JAGAT XML パブリッシング準研究会が、研究目的のために日本語訳したものです。原文は https://github.com/oreillymedia/HTMLBook にある英語版であり、その著作権は O’Reilly Media, Inc. が保有しています。この日本語訳は参考情報であり、翻訳の正確性を保証しません。）
+（訳注: この文書は JAGAT XML パブリッシング準研究会が、研究目的のために日本語訳したものです。原文は https://github.com/oreillymedia/HTMLBook にある英語版であり、その著作権は O’Reilly Media, Inc. が保有しています。この日本語訳は参考情報であり、翻訳の正確性を保証しません。）
 
 本をHTMLで執筆しましょう！　HTMLBookはオープンで、XHTML5ベースでプリントとデジタル双方の本を執筆・制作するための標準です。 HTMLBookは以下のような前提で作られています。
 
