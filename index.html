@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>HTMLBook</title>
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
                     companyURL: "http://oreilly.com" }
           ],
           localBiblio: {
-             "DOCBOOK": { 
+             "DOCBOOK": {
                 title: "The DocBook Document Type",
                 href: "http://www.docbook.org/specs/docbook-4.5-spec.html",
                 authors: ["Norman Walsh"],
@@ -37,7 +37,7 @@
                 href: "http://www.idpf.org/epub/idx/",
                 publisher: "IDPF"
              }
-          } 
+          }
       };
     </script>
     <style type="text/css">
@@ -51,9 +51,20 @@ span[data-type=footnote] {
   padding-bottom: 1px;
   font-size: smaller;
 }
+#about-translation {
+  font-size: 80%;
+  border: 1px solid #36C;
+  background-color: #EEF;
+  margin: 0 0 2em 0;
+  padding: 1em;
+}
 </style>
   </head>
   <body>
+    <div data-type="note" id="about-translation">
+      <p>この文書は「<a href="http://oreillymedia.github.io/HTMLBook/">HTMLBook Specification</a> (Unofficial Draft, O'Reilly Media)」を JAGAT XML パブリッシング準研究会が、研究目的のために<a href="https://github.com/JAGAT-XML-publishing-study-group/HTMLBook-JA">日本語訳</a>したものです。この仕様書の原文は <a href="https://github.com/oreillymedia/HTMLBook">https://github.com/oreillymedia/HTMLBook</a> にある英語版であり、その著作権は O&#x2019;Reilly Media, Inc. が保有しています。この日本語訳は参考情報であり、翻訳の正確性を保証しません。</p>
+      <p>公開開始日: 2014-12-09</p>
+    </div>
     <section id="abstract">
       <p>本をHTMLで執筆しましょう！　HTMLBookはオープンで、XHTML5ベースでプリントとデジタル双方の本を執筆・制作するための標準です。 HTMLBookは以下のような前提で作られています。</p>
       <ul>
@@ -541,7 +552,7 @@ span[data-type=footnote] {
   &lt;p&gt;In this final chapter of the book, we will&hellip;&lt;p&gt;
 &lt;/section&gt;</pre>
       </section>
-      <section data-type="sect2" id="_equation">   
+      <section data-type="sect2" id="_equation">
      <h2>方程式</h2>
         <p><strong>HTML要素</strong>: <code>&lt;div&gt;</code></p>
         <p><strong>属性要件</strong>: <code>data-type="equation"</code> <span data-type="footnote">([[EPUB3SSV]]でなく [[DOCBOOK]]由来])</span></p>
@@ -583,7 +594,7 @@ span[data-type=footnote] {
         <h2>その他の体裁 (下線、取り消し線、等) のための、多目的なフレーズのマークアップ</h2>
         <p><strong>HTML要素</strong>: <code>&lt;span&gt;</code></p>
         <p>例:</p>
-        <pre data-type="programlisting">&lt;p&gt;Use your own data-type or class attributes for custom styling for formatting 
+        <pre data-type="programlisting">&lt;p&gt;Use your own data-type or class attributes for custom styling for formatting
 like &lt;span data-type="strikethrough"&gt;strikethrough&lt;/span&gt;&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_footnote_endnote">
@@ -592,13 +603,13 @@ like &lt;span data-type="strikethrough"&gt;strikethrough&lt;/span&gt;&lt;/p&gt;<
         <p><strong>属性要件</strong>: <code>data-type="footnote"</code></p>
         <p><strong>コンテンツモデル</strong>: テキストおよび/またはゼロ個以上の<a href="#inline_elements">インライン要素</a></p>
         <p><strong>例</strong>:</p>
-        <pre data-type="programlisting">&lt;p&gt;Five out of every six people who try AsciiDoc prefer it to 
+        <pre data-type="programlisting">&lt;p&gt;Five out of every six people who try AsciiDoc prefer it to
 Markdown&lt;span data-type="footnote"&gt;Totally made-up statistic&lt;/span&gt;&lt;/p&gt;</pre>
         <p><strong>原注</strong>:</p>
         <ul>
           <li>
             <p><code>&lt;span&gt;</code>要素はブロック要素の子 (および 2014年4月現在、インラインコンテクストで使用され脚注として意味的に受容されるような他のいかなる HTML5 要素も) を受け入れない。もし複数のコンテンツのブロックを脚注に含めたいのであれば、<code>&lt;br/&gt;</code>要素を使って区切る、例えば:</p>
-        <pre data-type="programlisting">&lt;p&gt;This is a really short paragraph.&lt;span data-type="footnote"&gt;Largely because I like 
+        <pre data-type="programlisting">&lt;p&gt;This is a really short paragraph.&lt;span data-type="footnote"&gt;Largely because I like
 to put lots and lots of content in footnotes.&lt;br/&gt;&lt;br/&gt;
 For example, let me tell you a story about my dog...&lt;/span&gt;&lt;/p&gt;</pre>
           </li>
@@ -624,7 +635,7 @@ For example, let me tell you a story about my dog...&lt;/span&gt;&lt;/p&gt;</pre
         <p><strong>属性要件</strong>: <code>data-type="indexterm"</code>。主たる索引の項目の値のためには <code>data-primary</code> を使う。第二位の索引の項目の値のためには <code>data-secondary</code> を使う。第三位の索引の項目の値のためには <code>data-tertiary</code> を使う。現在のものに代えて使うべき索引への参照のためには <code>data-see</code> を使う。現在のものに加えて使うべき索引への参照のためには <code>data-seealso</code> を使う。アルファベット順で並べて表示するための整理のための値のためには <code>data-primary-sortas</code> 、 <code>data-secondary-sortas</code> 、または <code>data-tertiary-sortas</code> を使う。索引の範囲の最後を示すためのタグのためには <code>data-startref="開始の索引マーカーのID"</code> <span data-type="footnote">([[DOCBOOK]] の語義由来)</span> を使う。</p>
         <p><strong>コンテンツモデル</strong>: なし</p>
         <p><strong>例</strong>:</p>
-        <pre data-type="programlisting">&lt;p&gt;The Atlas build system&lt;a data-type="indexterm" data-primary="Atlas" data-secondary="build system"/&gt; lets 
+        <pre data-type="programlisting">&lt;p&gt;The Atlas build system&lt;a data-type="indexterm" data-primary="Atlas" data-secondary="build system"/&gt; lets
 you build EPUB, Mobi, PDF, and HTML content&lt;/p&gt;</pre>
       </section>
       <section data-type="sect2" id="_superscripts">
