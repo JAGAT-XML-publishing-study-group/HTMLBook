@@ -22,7 +22,7 @@ HTMLBook自体は以下のように特徴づけられています:
 
 http://oreillymedia.github.io/HTMLBook/
 
-（訳注: 日本語訳は http://jagat-xml-publishing-study-group.github.io/HTMLBook-JA/ ）
+（訳注: 日本語訳は http://jagat-xpub.github.io/HTMLBook-JA/ ）
 
 ここからHTMLBookスキーマを入手してください:
 
